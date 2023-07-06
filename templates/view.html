@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history</title>
+</head>
+<body>
+    <h1>Proompting History</h1>
+    <script>
+        window.addEventListener('load',async function(e){
+           let fet =await fetch("/prompthistory",{   
+                method:"GET",
+                headers:{
+                    'Content-Type':'application/json'
+                },
+            });
+            let data = await fet.json();
+            // let imgurl=data["image_url"]
+            // let img = document.createElement('img');
+            // img.src=imgurl;
+            // document.body.appendChild(img);
+            console.log(data);
+            let prompts = data["prompts"];
+            for(let i=0;i<prompts.length;i++){
+                let prompt = prompts[i];
+                let p = document.createElement('p');
+                p.innerHTML=prompt["prompt"]
+                let img = document.createElement('img');
+                img.src=prompt["image_url"];
+                let div = document.createElement('div');
+                div.appendChild(p);
+                div.appendChild(img);
+                document.body.appendChild(div);
+                div.style.border="1px solid black";
+                div.style.margin="10px";
+            }
+
+            
+            
+        });
+    </script>
+</body>
+</html>
