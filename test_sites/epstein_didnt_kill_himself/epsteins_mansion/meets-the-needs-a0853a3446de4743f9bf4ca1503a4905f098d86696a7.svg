@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="26px" viewBox="0 0 25 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>ra-agent</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Mobile" transform="translate(-30.000000, -1761.000000)" stroke="#333333" stroke-width="1.15">
+            <g id="benefits-icons-copy" transform="translate(24.000000, 1605.000000)">
+                <g id="Group-9" transform="translate(6.000000, 156.000000)">
+                    <g id="ra-agent">
+                        <polyline id="Stroke-1" points="13.4365714 4.18457143 9.29828571 0.572 0.571428571 8.156 2.23428571 8.156 2.23428571 17.2988571 6.23428571 17.2988571"></polyline>
+                        <path d="M21.6622857,11.5842286 C21.6622857,14.1088 19.6154286,16.1556571 17.0908571,16.1556571 C14.5662857,16.1556571 12.5194286,14.1088 12.5194286,11.5842286 C12.5194286,9.05965714 14.5662857,7.0128 17.0908571,7.0128 C19.6154286,7.0128 21.6622857,9.05965714 21.6622857,11.5842286 Z" id="Stroke-3"></path>
+                        <path d="M21.0908571,25.2985143 L23.948,25.2985143 L23.948,17.9122286 C23.948,17.3785143 23.7057143,16.9065143 23.3297143,16.5853714 C21.8634286,18.4128 19.6154286,19.5842286 17.0908571,19.5842286 C14.5662857,19.5842286 12.3182857,18.4128 10.852,16.5853714 C10.476,16.9065143 10.2337143,17.3785143 10.2337143,17.9122286 L10.2337143,25.2985143 L12.8782857,25.2985143 L13.1548571,25.2985143" id="Stroke-5"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
