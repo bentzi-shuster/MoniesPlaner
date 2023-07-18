@@ -6,7 +6,7 @@ from app.forms import LoginForm, RegistrationForm
 def home():
     return render_template('home.html')
 
-""" @app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
@@ -23,4 +23,4 @@ def register():
         # If the form has not been submitted, or the data is invalid, it will return False.
         # Handle the registration logic here
         return redirect(url_for('login'))
-    return render_template('register.html', form=form) """
+    return render_template('register.html', form=form)
