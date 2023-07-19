@@ -1,24 +1,20 @@
-from flask import Flask, jsonify, request
-from flask_bootstrap import Bootstrap
-from flask_jwt_extended import (
-    JWTManager, jwt_required, create_access_token, create_refresh_token,
-    get_jwt_identity, set_access_cookies, set_refresh_cookies, unset_jwt_cookies
-)
+from flask import Flask, Blueprint, render_template
+from flask_bootstrap import Bootstrap4
+from flask_jwt_extended import JWTManager
 from dotenv import load_dotenv
-import os
+from app.authentication import authentication
+from app.home import home
 
-load_dotenv()
+def create_app():
+    """Construct the core application."""
+    app = Flask(__name__)
+    app.config.from_object('config.Config')
+    load_dotenv()
+    bootstrap = Bootstrap4(app)
+    jwt = JWTManager(app)
 
-app = Flask(__name__)
-app.config.from_object('config.Config')
+    with app.app_context():
+        app.register_blueprint(authentication)
+        app.register_blueprint(home)
 
-jwt = JWTManager(app)
-bootstrap = Bootstrap(app)
-
-# Import the auth blueprint after JWTManager is initialized
-from app.auth import auth
-
-# Register the blueprint with the Flask application
-app.register_blueprint(auth, url_prefix='/auth')
-
-from app import routes
+    return app
