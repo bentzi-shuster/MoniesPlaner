@@ -3,11 +3,12 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
+
+let isAuthed = false
+
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+  
 ]
 
 function classNames(...classes) {
@@ -67,7 +68,10 @@ export default function Header() {
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
 
-                {/* Profile dropdown */}
+
+
+                {isAuthed ? ( 
+                /* Profile dropdown */
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -122,6 +126,16 @@ export default function Header() {
                     </Menu.Items>
                   </Transition>
                 </Menu>
+                ) : (
+                    <button
+                      type="button"
+                      className="inline-flex items-center px-3 py-1 border border-transparent text-base font-medium rounded-md text-white bg-gray-500 hover:bg-gray-700"
+                    >
+                        Sign in
+                    </button>
+
+                )}
+
               </div>
             </div>
           </div>
