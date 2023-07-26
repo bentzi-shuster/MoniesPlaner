@@ -1,8 +1,11 @@
+"use client"
 import PageLayout from './components/page-layout';
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 const Home = () => {
+  const { user, isLoading } = useUser()
   return (
-    <PageLayout>
+    <PageLayout user={user} loading={isLoading}>
       <h1>Next.js and Auth0 Example</h1>
         <>
           <p>
