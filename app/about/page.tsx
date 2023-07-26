@@ -1,8 +1,12 @@
+"use client";
+
+import { useUser } from '@auth0/nextjs-auth0/client'
 import PageLayout from "../components/page-layout";
 
 const About = () => {
+    const { user, isLoading } = useUser();
     return (
-        <PageLayout>
+        <PageLayout user={user} loading={isLoading}>
         <div className="content-layout">
             <h1 id="page-title" className="content__title">
             About Page

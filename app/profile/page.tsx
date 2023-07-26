@@ -7,16 +7,16 @@ import Image from "next/image";
 import HoverCardDemo from "../components/hover-card";
 
 const Profile = () => {
+  const { user, isLoading } = useUser();
   const defaultPicture =
     "https://cdn.auth0.com/blog/hello-auth0/auth0-user.png";
-  const { user } = useUser();
 
   if (!user) {
     return null;
   }
 
   return (
-    <PageLayout>
+    <PageLayout user={user} loading={isLoading}>
       <div className="content-layout">
         <h1 id="page-title" className="content__title">
           Profile Page

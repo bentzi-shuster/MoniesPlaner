@@ -6,4 +6,5 @@ export type User = {
     picture: string
     sub: string
     updated_at: string
+    title: string
   }
