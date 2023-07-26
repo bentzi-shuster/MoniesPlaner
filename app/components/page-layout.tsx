@@ -1,6 +1,5 @@
-"use client";
+"use client"
 
-import { useUser } from "@auth0/nextjs-auth0/client";
 import Head from 'next/head'
 import NavigationMenuDemo from './menu'
 
@@ -10,15 +9,14 @@ type LayoutProps = {
   children: React.ReactNode
 }
 
-const PageLayout = ({ user, children }: LayoutProps) => {
-  const { isLoading } = useUser()
+const PageLayout = ({ user, loading = false, children  }: LayoutProps) => {
   return (
     <>
       <Head>
         <title>Next.js with Auth0</title>
       </Head>
 
-      <NavigationMenuDemo user={isLoading} loading={isLoading} />
+      <NavigationMenuDemo user={user} loading={loading} />
 
       <main>
         <div className="container">{children}</div>
