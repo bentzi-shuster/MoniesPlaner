@@ -1,7 +1,7 @@
 import React from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import classNames from 'classnames';
-import { CaretDownIcon } from '@radix-ui/react-icons';
+import { PlusIcon, CaretDownIcon } from '@radix-ui/react-icons';
 import * as Avatar from '@radix-ui/react-avatar';
 import Link from 'next/link'
 // Define the type for the props of the ListItem component
@@ -22,7 +22,7 @@ const NavigationMenuDemo = ({ user, loading }: NaviProps) => {
       <NavigationMenu.List className="center shadow-blackA7 m-0 flex list-none rounded-[6px] bg-white p-1 shadow-[0_2px_10px]">
         <NavigationMenu.Item>
           <Link
-            className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
+            className="text-green11 hover:bg-green3 focus:shadow-green7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
             href="/"
           >
             Home
@@ -31,72 +31,53 @@ const NavigationMenuDemo = ({ user, loading }: NaviProps) => {
 
         <NavigationMenu.Item>
           <Link
-            className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
+            className="text-green11 hover:bg-green3 focus:shadow-green7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
             href="/about"
           >
-            About
+            Create Plan <PlusIcon className="inline " aria-hidden />
           </Link>
         </NavigationMenu.Item>
-        {
-          !loading && user && (
-            <NavigationMenu.Item>
-
-              <Link
-                className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
-                href="/profile"
-              >
-                Profile
-              </Link>
-            </NavigationMenu.Item>
-          )}
-        {
-          !loading && !user && (
-            <NavigationMenu.Item>
-              <a
-                className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
-                href="/api/auth/login"
-              >
-                Login
-              </a>
-            </NavigationMenu.Item>
-          )}
-        {
-          !loading && user && (
-            <NavigationMenu.Item>
-              <a
-                className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
-                href="/api/auth/logout"
-              >
-                Logout
-              </a>
-            </NavigationMenu.Item>
-          )
-        }
+        {!loading && !user && (
+          <NavigationMenu.Item>
+            <a
+              className="text-green11 hover:bg-green3 focus:shadow-green7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
+              href="/api/auth/login"
+            >
+              Login
+            </a>
+          </NavigationMenu.Item>
+        )}
         {!loading && user && (
-        <NavigationMenu.Item>
-          <NavigationMenu.Trigger className="text-violet11 hover:bg-violet3 focus:shadow-violet7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
-            Profile{' '}
-            <CaretDownIcon
-              className="text-violet10 relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
-              aria-hidden
-            />
-          </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="absolute top-0 left-0 w-full sm:w-auto">
-            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
-              <ListItem title="My Dreams" href="#">
-              </ListItem>
-            </ul>
-            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
-              <ListItem title="Cry" href="#">
-              </ListItem>
-            </ul>
-            <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
-              <ListItem title="Logout" href="/api/auth/logout">
-                Build high-quality, accessible design systems and web apps.
-              </ListItem>
-            </ul>
-          </NavigationMenu.Content>
-        </NavigationMenu.Item>
+          <NavigationMenu.Item>
+            <NavigationMenu.Trigger className="text-green11 hover:bg-green3 focus:shadow-green7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
+              <Avatar.Root className="bg-blackA3 inline-flex h-[20px] w-[20px] select-none items-center justify-center overflow-hidden rounded-full align-middle">
+                <Avatar.Image src={user.picture} alt={user.name} />
+                <Avatar.Fallback />
+              </Avatar.Root>{' '}
+              <CaretDownIcon
+                className="text-green10 relative top-[1px] transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
+                aria-hidden
+              />
+            </NavigationMenu.Trigger>
+            <NavigationMenu.Content className="min-w-[220px] bg-white rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] [animation-duration:_400ms] [animation-timing-function:_cubic-bezier(0.16,_1,_0.3,_1)] will-change-[transform,opacity]"
+              align="end"
+              sideOffset={8}
+              alignOffset={5}
+            >
+              <ul className="leading-none text-green11 rounded flex items-center h-[25px] px-[10px] relative select-none pl-5 outline-none data-[state=open]:bg-green4 data-[state=open]:text-green11 data-[highlighted]:bg-gradient-to-br data-[highlighted]:from-green9 data-[highlighted]:to-green10 data-[highlighted]:text-green1 data-[highlighted]:data-[state=open]:text-green1 data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none">
+                <ListItem title="My Profile" href="/profile">
+                </ListItem>
+              </ul>
+              <ul className="text-[13px] leading-none text-green11 rounded flex items-center h-[25px] px-[10px] relative select-none pl-5 outline-none data-[state=open]:bg-green4 data-[state=open]:text-green11 data-[highlighted]:bg-gradient-to-br data-[highlighted]:from-green9 data-[highlighted]:to-green10 data-[highlighted]:text-green1 data-[highlighted]:data-[state=open]:text-green1 data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none">
+                <ListItem title="My Plans" href="#">
+                </ListItem>
+              </ul>
+              <ul className="text-[13px] leading-none text-green11 rounded flex items-center h-[25px] px-[10px] relative select-none pl-5 outline-none data-[state=open]:bg-green4 data-[state=open]:text-green11 data-[highlighted]:bg-gradient-to-br data-[highlighted]:from-green9 data-[highlighted]:to-green10 data-[highlighted]:text-green1 data-[highlighted]:data-[state=open]:text-green1 data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none">
+                <ListItem title="Logout" href="/api/auth/logout">
+                </ListItem>
+              </ul>
+            </NavigationMenu.Content>
+          </NavigationMenu.Item>
         )}
         <NavigationMenu.Indicator
           className="data-[state=visible]:animate-fadeIn data-[state=hidden]:animate-fadeOut top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden transition-[width,transform_250ms_ease]"
@@ -120,12 +101,12 @@ const ListItem = React.forwardRef<HTMLLIElement, ListItemProps>((props, ref) => 
     <NavigationMenu.Link asChild>
       <a
         className={classNames(
-          'focus:shadow-[0_0_0_2px] focus:shadow-violet7 hover:bg-mauve3 block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors'
+          'focus:shadow-[0_0_0_2px] focus:shadow-green7 hover:bg-mauve3 block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors'
         )}
         {...props}
         ref={ref}
       >
-        <div className="text-violet12 mb-[5px] font-medium leading-[1.2]">{props.title}</div>
+        <div className="text-green12 mb-[5px] font-medium leading-[1.2]">{props.title}</div>
         <p className="text-mauve11 leading-[1.4]">{props.children}</p>
       </a>
     </NavigationMenu.Link>

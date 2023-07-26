@@ -17,6 +17,7 @@ const Profile = () => {
 
   return (
     <PageLayout user={user} loading={isLoading}>
+      <div className="violet-gradient-bg">
       <div className="content-layout">
         <h1 id="page-title" className="content__title">
           Profile Page
@@ -32,6 +33,7 @@ const Profile = () => {
             </span>
           </p>
         </div>
+      </div>
       </div>
       <HoverCardDemo
             imageSrc={user.picture || defaultPicture}
