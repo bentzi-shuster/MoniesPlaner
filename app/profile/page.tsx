@@ -4,6 +4,7 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 import CodeSnippet from "../components/code-snippet";
 import PageLayout from "../components/page-layout";
 import Image from "next/image";
+import HoverCardDemo from "../components/hover-card";
 
 const Profile = () => {
   const defaultPicture =
@@ -30,29 +31,18 @@ const Profile = () => {
               <strong>Only authenticated users can access this page.</strong>
             </span>
           </p>
-          <div className="profile-grid">
-            <div className="profile__header">
-              <Image
-                src={user.picture || defaultPicture}
-                alt="Profile"
-                className="profile__avatar"
-                width={80}
-                height={80}
-              />
-              <div className="profile__headline">
-                <h2 className="profile__title">{user.name}</h2>
-                <span className="profile__description">{user.email}</span>
-              </div>
-            </div>
-            <div className="profile__details">
-              <CodeSnippet
-                title="Decoded ID Token"
-                code={JSON.stringify(user, null, 2)}
-              />
-            </div>
-          </div>
         </div>
       </div>
+      <HoverCardDemo
+            imageSrc={user.picture || defaultPicture}
+            title={user.name}
+            username={user.nickname}
+            description={JSON.stringify(user, null, 2)}
+            following={100}
+            followers={2000}
+            sideOffset={10}
+            linkhref={user.email}
+          />
     </PageLayout>
   );
 };

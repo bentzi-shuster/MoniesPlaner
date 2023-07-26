@@ -32,7 +32,7 @@ const NavigationMenuDemo = ({ user, loading }: NaviProps) => {
         <NavigationMenu.Item>
           <Link
             className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
-            href="https://github.com/radix-ui"
+            href="/about"
           >
             About
           </Link>
@@ -46,31 +46,32 @@ const NavigationMenuDemo = ({ user, loading }: NaviProps) => {
             Profile
           </Link>
         </NavigationMenu.Item>
-        
-      {
-        !loading && !user && (
-          <NavigationMenu.Item>
-            <a
-              className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
-              href="/api/auth/login"
-            >
-              Login
-            </a>
-          </NavigationMenu.Item>
-        )
-      }
 
+        {
+          !loading && !user && (
+            <NavigationMenu.Item>
+              <a
+                className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
+                href="/api/auth/login"
+              >
+                Login
+              </a>
+            </NavigationMenu.Item>
+          )
+        }
+        {
+          !loading && user && (
+            <NavigationMenu.Item>
+              <a
+                className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
+                href="/api/auth/logout"
+              >
+                Logout
+              </a>
+            </NavigationMenu.Item>
+          )
+        }
 
-        <NavigationMenu.Item>
-          <a
-            className="text-violet11 hover:bg-violet3 focus:shadow-violet7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
-            href="/api/auth/logout"
-          >
-            Logout
-          </a>
-        </NavigationMenu.Item>
-        
-        
         <NavigationMenu.Indicator
           className="data-[state=visible]:animate-fadeIn data-[state=hidden]:animate-fadeOut top-full z-[1] flex h-[10px] items-end justify-center overflow-hidden transition-[width,transform_250ms_ease]"
         >
