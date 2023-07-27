@@ -14,10 +14,10 @@ const Home = () => {
   };
   return (
     <PageLayout user={user} loading={isLoading}>
-      <h1 className="text-2xl">Next.js and Auth0 Example</h1>
+      <h1 className="text-3xl">Next.js and Auth0 Example</h1>
       <>
         <p>
-          To test the login click in <i>Login</i>
+          To test the login click on <i>Login</i>
         </p>
         <p>
           Once you have logged in you should be able to navigate between
@@ -59,22 +59,22 @@ const Home = () => {
                 )
               }
             />
-            <CardComponent title="Card 3" imageUrl="https://picsum.photos/seed/3/300"
+            <CardComponent title="Nature" imageUrl="https://picsum.photos/seed/3/300"
               onClick={() =>
                 handleCardClick(
-                  'Card 3',
+                  'Nature',
                   'https://picsum.photos/seed/3/300'
                 )} />
-            <CardComponent title="Card 4" imageUrl="https://picsum.photos/seed/4/300"
+            <CardComponent title="Strawberries" imageUrl="https://picsum.photos/seed/4/300"
               onClick={() =>
                 handleCardClick(
-                  'Card 4',
+                  'Strawberries',
                   'https://picsum.photos/seed/4/300'
                 )} />
-            <CardComponent title="Card 4" imageUrl="https://picsum.photos/seed/5/300"
+            <CardComponent title="Deep Sea" imageUrl="https://picsum.photos/seed/5/300"
               onClick={() =>
                 handleCardClick(
-                  'Card 4',
+                  'Deep Sea',
                   'https://picsum.photos/seed/5/300'
                 )} />
           </div>
