@@ -33,7 +33,7 @@ const HoverCardDemo: React.FC<HoverCardContentProps> = ({
         <HoverCard.Trigger asChild>
             <a
                 className="inline-block cursor-pointer rounded-full shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] outline-none focus:shadow-[0_0_0_2px_white]"
-                href={linkhref}
+                href={"mailto:"+linkhref}
                 target="_blank"
                 rel="noreferrer noopener"
             >
@@ -52,7 +52,7 @@ const HoverCardDemo: React.FC<HoverCardContentProps> = ({
                             <div className="text-mauve12 m-0 text-[15px] font-medium leading-[1.5]">{title}</div>
                             <div className="text-mauve10 m-0 text-[15px] leading-[1.5]">@{username}</div>
                         </div>
-                        <div className="text-mauve12 m-0 text-[15px] leading-[1.5]">{description}</div>
+                        <div className="text-mauve12 m-0 text-[15px] leading-[1.5] break-words">{description}</div>
                         <div className="flex gap-[15px]">
                             <div className="flex gap-[5px]">
                                 <div className="text-mauve12 m-0 text-[15px] font-medium leading-[1.5]">{following}</div>{' '}
