@@ -31,11 +31,10 @@ const NavigationMenuDemo = ({ user, loading }: NaviProps) => {
 
         <NavigationMenu.Item>
           <Link
-            className="text-green11 hover:bg-green3 focus:shadow-green7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
+            className="inline-flex text-green11 hover:bg-green3 focus:shadow-green7 block select-none rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none no-underline outline-none focus:shadow-[0_0_0_2px]"
             href="/about"
           >
-            Create Plan <PlusIcon className="inline text-green10 relative"
-              aria-hidden />
+            Create Plan <PlusIcon />
           </Link>
         </NavigationMenu.Item>
         {!loading && !user && (
@@ -51,7 +50,7 @@ const NavigationMenuDemo = ({ user, loading }: NaviProps) => {
         {!loading && user && (
           <NavigationMenu.Item>
             <NavigationMenu.Trigger className="text-green11 hover:bg-green3 focus:shadow-green7 group flex select-none items-center justify-between gap-[2px] rounded-[4px] px-3 py-2 text-[15px] font-medium leading-none outline-none focus:shadow-[0_0_0_2px]">
-              <Avatar.Root className="bg-blackA3 inline-flex h-[20px] w-[20px] select-none items-center justify-center overflow-hidden rounded-full align-middle">
+              <Avatar.Root className="bg-blackA3 inline-flex h-[20px] w-[20px] select-none items-center justify-center overflow-hidden rounded-full align-middle border-[1px] border-green-300">
                 <Avatar.Image src={user.picture} alt={user.name} />
                 <Avatar.Fallback />
               </Avatar.Root>{' '}

@@ -6,6 +6,8 @@ import PageLayout from "../components/page-layout";
 import Image from "next/image";
 import HoverCardDemo from "../components/hover-card";
 
+
+
 const Profile = () => {
   const { user, isLoading } = useUser();
   const defaultPicture =
@@ -26,16 +28,13 @@ const Profile = () => {
           <p id="page-description">
             <span>
               You can use the <strong>ID Token</strong> to get the profile
-              information of an authenticated user.
+              information of an authenticated user
             </span>
             <span>
-              <strong>Only authenticated users can access this page.</strong>
+              <strong> Only authenticated users can access this page.</strong>
             </span>
           </p>
-        </div>
-      </div>
-      </div>
-      <HoverCardDemo
+          <HoverCardDemo
             imageSrc={user.picture || defaultPicture}
             title={user.name}
             username={user.nickname}
@@ -45,6 +44,9 @@ const Profile = () => {
             sideOffset={10}
             linkhref={user.email}
           />
+        </div>
+      </div>
+      </div>
     </PageLayout>
   );
 };
