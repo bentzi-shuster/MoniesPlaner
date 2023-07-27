@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import classNames from 'classnames';
-import { CaretDownIcon, HomeIcon, PlusIcon, PersonIcon, ExitIcon, FileIcon } from '@radix-ui/react-icons';
+import { CaretDownIcon, HomeIcon, PlusIcon, PersonIcon, ExitIcon, EnterIcon, FileIcon } from '@radix-ui/react-icons';
 import * as Avatar from '@radix-ui/react-avatar';
 import Link from 'next/link'
 
@@ -36,16 +36,16 @@ const NavigationMenuDemo = ({ user, loading }: NaviProps) => {
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
-          <Link href="/about" className="flex items-center gap-2 hover:bg-green3 px-4 py-2 rounded-lg no-underline focus:ring-2 focus:ring-green-7 outline-none">
-            <PlusIcon className="inline" aria-label="Create Plan" />
+          <Link href="/about" className="flex justify-center items-center hover:bg-green3 px-4 py-2 rounded-lg no-underline focus:ring-2 focus:ring-green-7 outline-none">
+            <PlusIcon className="mr-2" aria-label="Create Plan" />
             Create Plan
           </Link>
         </NavigationMenu.Item>
 
         {!loading && !user && (
           <NavigationMenu.Item>
-            <a href="/api/auth/login" className="hover:bg-green3 px-4 py-2 rounded-lg no-underline focus:ring-2 focus:ring-green-7 outline-none">
-              <PersonIcon className="mr-2" aria-label="Login" />
+            <a href="/api/auth/login" className="flex justify-center items-center hover:bg-green3 px-4 py-2 rounded-lg no-underline focus:ring-2 focus:ring-green-7 outline-none">
+              <EnterIcon className="mr-2" aria-label="Login" />
               Login
             </a>
           </NavigationMenu.Item>
