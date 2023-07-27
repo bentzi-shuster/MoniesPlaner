@@ -19,7 +19,7 @@ const Profile = () => {
     <PageLayout user={user} loading={isLoading}>
       <div className="violet-gradient-bg">
       <div className="content-layout">
-        <h1 id="page-title" className="content__title">
+        <h1 id="page-title" className="text-2xl content__title">
           Profile Page
         </h1>
         <div className="content__body">

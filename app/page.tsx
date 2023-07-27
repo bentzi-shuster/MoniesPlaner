@@ -6,7 +6,7 @@ const Home = () => {
   const { user, isLoading } = useUser()
   return (
     <PageLayout user={user} loading={isLoading}>
-      <h1>Next.js and Auth0 Example</h1>
+      <h1 className="text-2xl">Next.js and Auth0 Example</h1>
         <>
           <p>
             To test the login click in <i>Login</i>
