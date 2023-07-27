@@ -3,5 +3,20 @@
 @tailwind utilities;
 
 body {
-  background-color: #fef6f7;
+  background-color: #f4faf8;
+  margin: 0;
+  color: #08120d;
+}
+
+.container {
+  max-width: 42rem;
+  margin: 1.5rem auto;
+}
+
+footer{
+  color: #020905;
+}
+
+NavigationMenu{
+  color: #0fcc3f;
 }
