@@ -12,10 +12,6 @@ type LayoutProps = {
 const PageLayout = ({ user, loading = false, children  }: LayoutProps) => {
   return (
     <>
-      <Head>
-        <title>Next.js with Auth0</title>
-      </Head>
-
       <NavigationMenuDemo user={user} loading={loading} />
 
       <main>
