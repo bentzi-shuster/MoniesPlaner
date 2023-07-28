@@ -4,7 +4,7 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import PageLayout from './components/page-layout';
 import CardComponent from './components/card';
 import PopupCard from './components/popup-card';
-
+import TabComponent from './components/tab';
 type CardInfo = {
   title: string;
   imageUrl: string;
@@ -31,6 +31,29 @@ const cards: CardInfo[] = [
   {
     title: "Deep Sea",
     imageUrl: "https://picsum.photos/seed/5/300"
+  },
+];
+
+const usercards: CardInfo[] = [
+  {
+    title: "Bad Mailbox",
+    imageUrl: "https://cdn.discordapp.com/attachments/743166351891365989/1133237903473000500/image.png"
+  },
+  {
+    title: "Good Mailbox",
+    imageUrl: "https://cdn.discordapp.com/attachments/743166351891365989/1133238034444333126/image.png"
+  },
+  {
+    title: "City",
+    imageUrl: "https://picsum.photos/seed/9/300"
+  },
+  {
+    title: "Lights",
+    imageUrl: "https://picsum.photos/seed/8/300"
+  },
+  {
+    title: "Eye",
+    imageUrl: "https://cdn.discordapp.com/attachments/743166351891365989/1127059932546601101/3748.png"
   },
 ];
 
@@ -69,7 +92,17 @@ const Home: React.FC = () => {
             <span>See where your salary goes and how much you can save.</span>
           </p>
         </div>
-        <h2 className="text-xl">Community feed</h2>
+        {/* New Method */}
+        <div>
+          <div>
+            <TabComponent communityCards={cards} myPlanCards={usercards} onClick={handleCardClick} />
+          </div>
+          <div>
+
+          </div>
+        </div>
+
+        {/* Old Method with popup */}
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-8 grid grid-cols-2 gap-4">
             {/* Mapped over cards */}
@@ -92,7 +125,6 @@ const Home: React.FC = () => {
                   onClose={handleCloseCard}
                 />
               </div>
-              <div className="flex-1"></div>
             </div>
           </div>
         </div>
