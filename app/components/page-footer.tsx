@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-const Footer: React.FC = () => {
-  const isLightMode = false;
 
+const Footer: React.FC = () => {
   return (
-    <footer className={`lg shadow m-4 ${isLightMode ? 'dark:bg-gray-800' : ''}`}>
-      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-        <span className={`text-sm text-${isLightMode ? 'gray-500' : 'gray-400'} sm:text-center ${isLightMode ? 'dark:text-gray-400' : 'text-gray-500'}`}>
-          © 2023 <a href="https://flowbite.com/" className="hover:underline">MoniesPlanner™</a>. All Rights Reserved.
-        </span>
-        <ul className={`flex flex-wrap items-center mt-3 text-sm font-medium text-${isLightMode ? 'gray-500' : 'gray-400'} ${isLightMode ? 'dark:text-gray-400' : 'text-gray-500'} sm:mt-0`}>
+    <footer className="bg-white border-t border-gray-200 py-6 mt-8">
+      <div className="container mx-auto max-w-screen-lg flex justify-between items-center px-4">
+        <div className="text-gray-600 text-sm">
+          © 2023 <a href="https://flowbite.com/" className="text-green-600 hover:underline">MoniesPlanner™</a>. All Rights Reserved.
+        </div>
+        <ul className="flex items-center space-x-6 text-sm text-gray-600">
           <li>
-            <Link href="/about" className={`mr-4 hover:underline ${isLightMode ? 'md:mr-6' : ''}`}>About</Link>
+            <Link href="/about"className="hover:underline">About
+            </Link>
           </li>
           <li>
-            <a href="#" className={`mr-4 hover:underline ${isLightMode ? 'md:mr-6' : ''}`}>Privacy Policy</a>
+            <a href="#" className="hover:underline">Privacy Policy</a>
           </li>
           <li>
-            <a href="#" className={`mr-4 hover:underline ${isLightMode ? 'md:mr-6' : ''}`}>Licensing</a>
+            <a href="#" className="hover:underline">Licensing</a>
           </li>
           <li>
             <a href="#" className="hover:underline">Contact</a>
