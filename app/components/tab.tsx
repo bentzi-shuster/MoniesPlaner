@@ -9,7 +9,7 @@ type TabProps = {
 }
 
 
-function classNames(...classes) {
+function classNames(...classes:any[]) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -20,8 +20,8 @@ const TabComponent = ({ communityCards, myPlanCards, onClick }: TabProps) => {
     'My Plans': myPlanCards,
   };
 
-  return (
-    <div className="w-full max-w-md px-2 py-16 sm:px-0">
+  return 
+    /* <div className="w-full max-w-md px-2 py-16 sm:px-0">
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
           {Object.keys(tabs).map((tab) => (
@@ -51,7 +51,7 @@ const TabComponent = ({ communityCards, myPlanCards, onClick }: TabProps) => {
               )}
             >
               <div className="grid grid-cols-2 gap-4">
-                {cards.map((card) => (
+                {cards.map((card: any) => (
                   <CardComponent
                     key={card.title}
                     title={card.title}
@@ -64,8 +64,8 @@ const TabComponent = ({ communityCards, myPlanCards, onClick }: TabProps) => {
           ))}
         </Tab.Panels>
       </Tab.Group>
-    </div>
-  )
+    </div> */
+  
 }
 
 export default TabComponent;
