@@ -1,7 +1,6 @@
 "use client";
 
 import { useUser } from '@auth0/nextjs-auth0/client'
-import PageLayout from "../components/page-layout";
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 const About = () => {
     const { user, isLoading } = useUser();
     return (
-        <PageLayout user={user} loading={isLoading}>
+
         <div className="content-layout">
             <h1 id="page-title" className="content__title">
             About Page
@@ -25,7 +24,7 @@ const About = () => {
             </p>
             </div>
         </div>
-        </PageLayout>
+
     );
 }
 

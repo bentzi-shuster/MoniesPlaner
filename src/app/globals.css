@@ -6,6 +6,7 @@ body {
   background-color: #f4faf8;
   margin: 0;
   color: #08120d;
+  position: relative;
 }
 
 .container {
