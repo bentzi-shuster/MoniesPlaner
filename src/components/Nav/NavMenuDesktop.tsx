@@ -9,7 +9,7 @@ const NavMenuDesktop = ({navs, isLoggedIn}) => {
     className="flex flex-col w-[100] shadow-[0_2px_10px] shadow-blackA4"
     defaultValue="/"
   >
-    <Tabs.List className="shrink-0 flex border-b border-mauve6" aria-label="Manage your account">
+    <Tabs.List className="shrink-0 flex border-b border-mauve6" aria-label="Nav Bar">
       {navs.map((nav,index)=>{
         if(nav.Auth!==null){
         if(nav.Auth && !isLoggedIn){
@@ -25,7 +25,7 @@ const NavMenuDesktop = ({navs, isLoggedIn}) => {
           value={nav.Link}
           key={index}
         >
-          <Link href={nav.Link} className="w-full h-full flex items-center justify-center">
+          <Link href={nav.Link} className="w-full h-full flex items-center justify-center" title={nav.Description}>
           {nav.Name}
             </Link>
         </Tabs.Trigger>

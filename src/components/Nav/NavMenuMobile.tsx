@@ -16,7 +16,7 @@ const NavMenuMobile = ({navs, isLoggedIn}) => {
           <DropdownMenu.Trigger asChild>
             <button
               className="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-violet11 bg-white shadow-[0_2px_10px] shadow-blackA7 outline-none hover:bg-violet3 focus:shadow-[0_0_0_2px] focus:shadow-black top-0 right-0 mr-[10px] mt-[10px] absolute z-50"
-              aria-label="Customise options"
+              aria-label="Open Menu"
             >
               <HamburgerMenuIcon />
             </button>
@@ -38,7 +38,7 @@ const NavMenuMobile = ({navs, isLoggedIn}) => {
               return(
               <DropdownMenu.Item className="group text-[13px] leading-none text-violet11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1"
               key={index}>
-                <Link href={nav.Link} className="w-full h-full flex items-center justify-center">
+                <Link title={nav.Description} href={nav.Link} className="w-full h-full flex items-center justify-center">
                 {nav.Name}
                   </Link>
               </DropdownMenu.Item>)
