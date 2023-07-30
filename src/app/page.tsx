@@ -1,9 +1,17 @@
+import { getSession } from "@auth0/nextjs-auth0";
 
-const Home: React.FC = () => {
-
-  
-
+const Home: React.FC = async() => {
+  const session = await getSession();
+ let loggedIn = session && session.user && session.user["name"];
   return (
+    (loggedIn ?
+    <>
+
+      plans go here
+
+
+    </>
+    :
   <>
       <h1 className="text-3xl text-center font-bold pt-20">Monnies Planner!</h1>
       <div className="mx-auto max-w-2xl py-32 sm:py-20 lg:py-13">
@@ -27,7 +35,7 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-      </>
+      </>)
 
   );
 };
