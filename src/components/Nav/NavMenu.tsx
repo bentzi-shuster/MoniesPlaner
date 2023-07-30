@@ -25,11 +25,12 @@ useEffect(() => {
 }, []);        
 let isLoggedIn = user && user.user && user.user["name"];
 let navs = [
-  {Name:"Home",Link:"/",Auth:null},
+  {Name:"All Plans",Link:"/",Auth:null},
   {Name:"My Plans",Link:"/plans",Auth:true},
-  {Name:"New Plan",Link:"/plans/new",Auth:true},
-  {Name:"Login",Link:"/api/auth/login",Auth:false},
+  {Name:"Account",Link:"/account",Auth:true},
   {Name:"Logout",Link:"/api/auth/logout",Auth:true},
+  {Name:"Login",Link:"/api/auth/login",Auth:false},
+ 
 ];
   return (
     <>
