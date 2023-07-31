@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect } from 'react';
-import { useUser } from '@auth0/nextjs-auth0/client';
 import NavMenu from '../Nav/NavMenu';
 
 const HeaderElm = () => {
