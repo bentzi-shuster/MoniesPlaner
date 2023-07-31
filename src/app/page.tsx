@@ -1,10 +1,10 @@
 import { getSession } from "@auth0/nextjs-auth0";
 import PlanView from "../components/PlanView/PlanView";
 let plans = [
-  {Name:"Plan 1",Description:"This is a plan",Cost:1000,Income:2000},
-  {Name:"Plan 2",Description:"This is a plan on DRUGS",Cost:1000,Income:2000},
-  {Name:"Plan 3",Description:"This is a plan with a lot of money",Cost:1000,Income:2000},
-  {Name:"Plan 4",Description:"This plan was made by a 5 year old",Cost:1000,Income:2000},
+  {Name:"Plan 1",Description:"This is a plan",Cost:1000,Income:2000,Img:"https://picsum.photos/900/600"},
+  {Name:"Plan 2",Description:"This is a plan on DRUGS",Cost:1000,Income:2000,Img:"https://picsum.photos/900/600"},
+  {Name:"Plan 3",Description:"This is a plan with a lot of money",Cost:1000,Income:2000,Img:"https://picsum.photos/900/600"},
+  {Name:"Plan 4",Description:"This plan was made by a 5 year old",Cost:1000,Income:2000,Img:"https://picsum.photos/900/600"},
 
 ]
 
