@@ -4,8 +4,8 @@ import * as Tabs from '@radix-ui/react-tabs';
 import Link from 'next/link';
 
 const NavMenuDesktop = ({navs, isLoggedIn}) => {
-  let [linkpath,setLinkPath] = React.useState(window.location.pathname);
-  
+
+  let [linkpath,setLinkPath] = React.useState("/");
   return (
   <Tabs.Root
     className="flex flex-col w-[100%] shadow-[0_5px_10px_-3px] shadow-blackA4"
