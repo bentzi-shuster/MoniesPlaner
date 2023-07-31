@@ -15,4 +15,4 @@ export default withPageAuthRequired (async function Account() {
 <PlanView plans={plans}/>
                 </div>
             )
-    }, { returnTo: '/account' })
+    }, { returnTo: '/plans' })
