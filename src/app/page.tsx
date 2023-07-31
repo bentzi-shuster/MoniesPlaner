@@ -42,6 +42,7 @@ const Home: React.FC = async() => {
             </div>
           </div>
         </div>
+        <PlanView plans={plans}/>
       </>)
 
   );
