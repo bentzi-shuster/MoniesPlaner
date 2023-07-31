@@ -1,8 +1,6 @@
 "use client"
 import React, { useEffect } from 'react';
-import * as Tabs from '@radix-ui/react-tabs';
 import { useUser } from '@auth0/nextjs-auth0/client';
-import Link from 'next/link';
 import { isMobile } from "./mobileRegex"
 import NavMenuDesktop from './NavMenuDesktop';
 import NavMenuMobile from './NavMenuMobile';

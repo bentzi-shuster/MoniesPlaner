@@ -8,7 +8,7 @@ const NavMenuDesktop = ({navs, isLoggedIn}) => {
   
   return (
   <Tabs.Root
-    className="flex flex-col w-[100] shadow-[0_2px_10px] shadow-blackA4"
+    className="flex flex-col w-[100%] shadow-[0_5px_10px_-3px] shadow-blackA4"
     defaultValue="/"
     
   >
