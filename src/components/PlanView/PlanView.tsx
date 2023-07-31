@@ -5,7 +5,7 @@ export default function PlanView({plans}) {
  let [activePlan, setActivePlan] = useState(null);
 return (<div className="flex flex-row items-center justify-center py-6 gap-4">
   {/* make the rows have the same height */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4 m-4 flex-1 place-items-center grid-flow-row-dense">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4 m-4 flex-1 place-items-center grid-flow-row-dense justify-items-stretch">
     {plans.map((plan) => (
 <Plan 
 onClick={()=>setActivePlan(plan)}

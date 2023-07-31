@@ -5,7 +5,7 @@ export default function Plan({plan,onClick}) {
 
 return(
     <div onClick={onClick}
-     className="sm:max-w-sm sm:min-w-sm md:max-w-full md:min-w-full lg:max-w-full lg:min-w-full overflow-hidden shadow-[0_0px_4px_1px] shadow-blackA4 bg-white border border-gray-200 cursor-pointer relative"
+     className="sm:max-w-sm sm:min-w-sm md:max-w-full md:min-w-full lg:max-w-full lg:min-w-full overflow-hidden shadow-[0_0px_4px_1px] shadow-blackA4 bg-white border border-gray-200 cursor-pointer relative self-stretch"
       style={{
         background: `url(${plan.Img})`,
         backgroundSize: "cover",
@@ -13,12 +13,14 @@ return(
         backgroundPosition: "center center",
       }}
       >
-        <div className="bg-white bg-opacity-60 hover:bg-opacity-0 transition duration-250 ease-in-out">
-
-<Link href={`/plans/`+plan.id} className="absolute top-0 right-0 p-2"
+        
+  <Link href={`/plans/`+plan.id} className="absolute top-0 right-0 p-2 rounded-full bg-white bg-opacity-70 transition duration-250 ease-in-out mr-2 mt-2 border border-green-700 z-10 lg:hidden"
  target="_blank" rel="noopener noreferrer">
   <OpenInNewWindowIcon />
 </Link>
+        <div className="bg-white bg-opacity-70 transition duration-250 ease-in-out hover:opacity-0 h-full">
+
+
     <div className="px-6 py-4 text-center ">
       <div className="font-extrabold text-xl mb-2 text-black max-w-fit mx-auto rounded-sm px-1 border-b-2 border-b-green10 text-center 
       ">{plan.Name}</div>
