@@ -8,11 +8,11 @@ const NavMenuDesktop = ({navs, isLoggedIn}) => {
   let [linkpath,setLinkPath] = React.useState("/");
   return (
   <Tabs.Root
-    className="flex flex-col w-[100%] shadow-[0_5px_10px_-3px] shadow-blackA4"
+    className="flex flex-col w-[100%]"
     defaultValue="/"
     
   >
-    <Tabs.List className="shrink-0 flex border-b border-mauve6" aria-label="Nav Bar">
+    <Tabs.List className="shrink-0 flex" aria-label="Nav Bar">
       {navs.map((nav,index)=>{
         if(nav.Auth!==null){
         if(nav.Auth && !isLoggedIn){
