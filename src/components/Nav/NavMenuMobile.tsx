@@ -15,7 +15,7 @@ const NavMenuMobile = ({navs, isLoggedIn}) => {
         <DropdownMenu.Root >
           <DropdownMenu.Trigger asChild>
             <button
-              className="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-violet11 bg-white outline-none hover:bg-violet3 focus:shadow-[0_0_0_2px] focus:shadow-black"
+              className="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-emerald-800 bg-white outline-none hover:bg-green-50 focus:shadow-[0_0_0_2px] focus:shadow-black"
               aria-label="Open Menu"
             >
               <HamburgerMenuIcon />
@@ -36,7 +36,7 @@ const NavMenuMobile = ({navs, isLoggedIn}) => {
                 }
               }
               return(
-              <DropdownMenu.Item className="group text-[13px] leading-none text-violet11 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[highlighted]:text-violet1"
+              <DropdownMenu.Item className="group text-[13px] leading-none text-emerald-800 rounded-[3px] flex items-center h-[25px] px-[5px] relative pl-[25px] select-none outline-none data-[disabled]:text-mauve8 data-[disabled]:pointer-events-none data-[highlighted]:bg-emerald-500 data-[highlighted]:text-green-50"
               key={index}>
                 <Link title={nav.Description} href={nav.Link} className="w-full h-full flex items-center justify-center">
                 {nav.Name}
