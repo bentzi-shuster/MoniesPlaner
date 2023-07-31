@@ -18,7 +18,7 @@ return(
  target="_blank" rel="noopener noreferrer">
   <OpenInNewWindowIcon />
 </Link>
-        <div className="bg-white bg-opacity-70 transition duration-250 ease-in-out hover:opacity-0 h-full">
+        <div className="bg-white bg-opacity-70 transition duration-300 ease-in hover:opacity-0 h-full">
 
 
     <div className="px-6 py-4 text-center ">

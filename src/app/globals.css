@@ -8,6 +8,7 @@ body {
   color: #08120d;
   position: relative;
   box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .container {
