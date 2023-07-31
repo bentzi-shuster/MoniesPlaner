@@ -15,7 +15,8 @@ const Home: React.FC = async() => {
   return (
     (loggedIn ?
     <>
-
+    <h1 className="text-3xl text-center font-bold pt-20" 
+    >Browse Public Plans</h1>
 <PlanView plans={plans}/>
     </>
     :
