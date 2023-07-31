@@ -14,10 +14,8 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
     <html lang="en">
       <UserProvider>
         <body>
-      {/* <ProtectedRoute> */}
       <HeaderElm />
         {children}
-      {/* </ProtectedRoute> */}
       <Footer />
       </body>
       </UserProvider>
