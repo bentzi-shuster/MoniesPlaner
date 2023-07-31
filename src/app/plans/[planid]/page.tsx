@@ -56,7 +56,7 @@ export default async function Account({params}:{params:{planid:string}}) {
                 backgroundPosition: "center center",
                 }}
                  className="h-72 w-full text-center text-5xl font-bold flex items-center justify-center">
-                    <div className="bg-white bg-opacity-60 px-4 py-2 border-b-green-800 border-b-4">
+                    <div className="bg-white bg-opacity-60 w-full h-full border-b-green-800 border-b-8 flex items-center justify-center">
                         {plans[planid].Name}
                     </div>               
              </span>
@@ -66,7 +66,7 @@ export default async function Account({params}:{params:{planid:string}}) {
                         {plans[planid].Description}
 
                     </div>
-                    <div className="w-1/2 text-center text-md flex flex-row items-center justify-center gap-4 mt-12">
+                    <div className="w-1/2 text-center text-md flex md:flex-row flex-col items-center justify-center gap-4 mt-12">
                         <span className="bg-green10 text-white px-4 py-2 rounded-full">
                             Cost: ${plans[planid].Cost}
                         </span>
