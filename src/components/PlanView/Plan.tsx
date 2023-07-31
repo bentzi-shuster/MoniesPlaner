@@ -4,7 +4,7 @@ export default function Plan({plan,onClick}) {
 
 return(
     <div onClick={onClick}
-     className="sm:max-w-sm sm:min-w-sm md:max-w-full md:min-w-full lg:max-w-full lg:min-w-full rounded overflow-hidden shadow-[0_0px_4px_1px] shadow-blackA4 bg-white border border-gray-200 cursor-pointer"
+     className="sm:max-w-sm sm:min-w-sm md:max-w-full md:min-w-full lg:max-w-full lg:min-w-full overflow-hidden shadow-[0_0px_4px_1px] shadow-blackA4 bg-white border border-gray-200 cursor-pointer"
       style={{
         background: `url(${plan.Img})`,
         backgroundSize: "cover",
