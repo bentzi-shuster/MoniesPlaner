@@ -2,7 +2,7 @@
 name: DevOps
 about: " \U0001F916 "
 title: ''
-labels: ''
+labels: DevOps
 assignees: ''
 
 ---

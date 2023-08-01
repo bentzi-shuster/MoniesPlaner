@@ -2,7 +2,7 @@
 name: User Feature
 about: " \U0001F464 "
 title: ''
-labels: ''
+labels: User Feature
 assignees: ''
 
 ---

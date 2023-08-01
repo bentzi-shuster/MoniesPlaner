@@ -2,7 +2,7 @@
 name: Bug Report
 about: " \U0001F41B "
 title: ''
-labels: ''
+labels: enhancement
 assignees: ''
 
 ---

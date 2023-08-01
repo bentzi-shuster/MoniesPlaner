@@ -2,7 +2,7 @@
 name: Technical
 about: " \U0001F527 "
 title: ''
-labels: ''
+labels: Technical Task
 assignees: ''
 
 ---
