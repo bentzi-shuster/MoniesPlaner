@@ -12,6 +12,7 @@
     "@auth0/nextjs-auth0": "^3.0.0",
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
+    "@prisma/client": "^5.1.0",
     "@radix-ui/colors": "^1.0.1",
     "@radix-ui/primitive": "^1.0.1",
     "@radix-ui/react-avatar": "^1.0.3",
