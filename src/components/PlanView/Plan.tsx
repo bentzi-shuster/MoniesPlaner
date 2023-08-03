@@ -1,40 +1,86 @@
-import Image from "next/image"
-import Link from "next/link"
-import { OpenInNewWindowIcon } from '@radix-ui/react-icons'
-export default function Plan({plan,onClick}) {
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { OpenInNewWindowIcon } from '@radix-ui/react-icons';
+import { useCallback } from 'react';
 
-return(
-    <div onClick={onClick}
-     className="sm:max-w-sm sm:min-w-sm md:max-w-full md:min-w-full lg:max-w-full lg:min-w-full overflow-hidden shadow-[0_0px_4px_1px] shadow-blackA4 bg-white border border-gray-200 cursor-pointer relative self-stretch"
-      style={{
-        background: `url(${plan.Img})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
-      }}
-      >
-        
-  <Link href={`/plans/`+plan.id} className="absolute top-0 right-0 p-2 rounded-full bg-white bg-opacity-70 transition duration-250 ease-in-out mr-2 mt-2 border border-green-700 z-10 lg:hidden"
- target="_blank" rel="noopener noreferrer">
-  <OpenInNewWindowIcon />
-</Link>
-        <div className="bg-white bg-opacity-70 transition duration-300 ease-in hover:opacity-0 h-full">
-
-
-    <div className="px-6 py-4 text-center ">
-      <div className="font-extrabold text-xl mb-2 text-black max-w-fit mx-auto rounded-sm px-1 border-b-2 border-b-green10 text-center 
-      ">{plan.Name}</div>
-      <p className="text-black text-base h-12 text-ellipsis overflow-hidden ">
-        {plan.Description}
-      </p>
-    </div>
-    <div className="px-6 pt-4 pb-2mix-blend-difference text-white">
-      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Cost: ${plan.Cost}</span>
-      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Income ${plan.Income}</span>
-    </div>
-  </div>
-  </div>
-
-)
-
+// Type declarations for the plan component's props
+interface PlanProps {
+  plan: {
+    id: string;
+    Img: string;
+    Name: string;
+    Description: string;
+    Cost: number;
+    Income: number;
+  };
+  // function prop for when the plan is clicked
+  onClick: () => void;
 }
+
+// plan component accepts plan object and onClick function
+const Plan: React.FC<PlanProps> = ({ plan, onClick }) => {
+  const [showOverlay, setShowOverlay] = useState(true);
+
+  // local state for showing/hiding the overlay
+  const handleMouseEnter = useCallback(() => {
+    setShowOverlay(false);
+  }, []);
+
+  // useCallback makes so these funcitons are not recreated on every render
+  const handleMouseLeave = useCallback(() => {
+    setShowOverlay(true);
+  }, []);
+
+
+  return (
+    // Main Card Container
+    <div
+      className="relative w-full h-[308px] overflow-hidden cursor-pointer"
+      onClick={onClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Main Card Background Image */}
+      <Image
+        src={plan.Img}
+        alt={plan.Name}
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+      />
+
+      {/* Mobile Popout Link */}
+      <Link
+        href={`/plans/` + plan.id}
+        className="absolute top-0 right-0 p-2 rounded-full bg-white bg-opacity-70 transition duration-250 ease-in-out mr-2 mt-2 border border-green-700 z-10 lg:hidden"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <OpenInNewWindowIcon />
+      </Link>
+
+      {/* Overlay Card - disapears from the background image on mouse enter */}
+      <div
+        className={`absolute bottom-4 left-4 right-4 px-4 py-3 bg-[#17B890] rounded-lg transition-opacity duration-300 ${
+          showOverlay ? 'pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        {/* Overlay Card Title & Date*/}
+        <div className={`flex justify-between items-start mb-1 transition-opacity duration-300 ${showOverlay ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="text-xs font-bold text-[#FA8334]">{plan.Name}</div>
+          <p className="text-xs font-medium">last month</p> {/* placeholder date text */}
+        </div>
+        <p className={`text-sm transition-opacity duration-300 ${showOverlay ? 'opacity-100' : 'opacity-0'}`}>Cost: ${plan.Cost} </p>
+        <p className={`text-sm transition-opacity duration-300 ${showOverlay ? 'opacity-100' : 'opacity-0'}`}>Income: ${plan.Income} </p>
+        {/* the avatar and username */}
+        <div className={`w-6 h-6 overflow-hidden bg-gray-300 rounded-full transition-opacity duration-300 ${showOverlay ? 'opacity-100' : 'opacity-0'}`}>
+          <Image src="/assets/images/avatars/c.png" alt="avatar" width={24} height={24}  className="object-cover w-full h-full"/>
+          <p className="font-medium">Username</p> {/* placeholder username */}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Plan;
