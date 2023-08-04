@@ -1,5 +1,5 @@
 "use client"
-import { Plan } from "@prisma/client";
+import { plan } from "@prisma/client";
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import { OpenInNewWindowIcon } from '@radix-ui/react-icons';
 import { useCallback } from 'react';
 
 type PlanItemProps = {
-    plan: Plan
+    plan: plan
     // function prop for when the plan is clicked
     onClick: () => void
 }
