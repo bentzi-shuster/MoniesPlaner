@@ -3,6 +3,7 @@ import PlanView from "../components/PlanItem/PlanView";
 import { getPlans } from "../lib/plans"
 import NewPlanForm from "../components/PlanForm/NewPlanForm";
 import { Plan } from "@prisma/client";
+import Link from "next/link";
 
 
 const Home = async () => {
@@ -11,44 +12,38 @@ const Home = async () => {
   const { plans } = await getPlans();
   console.log(plans);
   return (
-    (loggedIn ?
-      <>
-        <h1 className="text-3xl text-center font-bold pt-20"
-        >Browse Public Plans</h1>
-      </>
-      :
-      <>
-        <h1 className="text-3xl text- text-center font-bold pt-20">Monnies Planner!</h1>
-        <div className="mx-auto max-w-2xl py-32 sm:py-20 lg:py-13">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl  px-10">
-              Life is better with a plan.
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600 px-6">
-              Embark on a journey of financial discovery with MonniesPlanner,
-              where your dreams find a clear path to reality. See beyond the horizon
-              as we help you envision your dream life - from that cozy house to those
-              sleek cars - and understand the financial path to get there. Take charge
-              of your future today and turn aspirations into well-planned realities
-              with MonniesPlanner by your side.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="/plans"
-                className="rounded-md bg-[#17B890] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-[#0D9488] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
-              >
-                Start Planning
-              </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                Learn more <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
-          <NewPlanForm />
-        </div>
-        <PlanView plans={plans as Plan[]} />
-      </>)
+    <>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-center bg-cover bg-no-repeat" style={{ backgroundImage: "url('https://cdn.discordapp.com/attachments/1093012473231196190/1136824141207568455/carrlos_An_image_of_diverse_young_friends_sitting_in_a_circle_c_a912081b-81c2-4bb4-8c9a-610d285cd181.png')" }}>
+        <div className="max-w-md w-full space-y-8 text-center bg-white bg-opacity-75 rounded-lg p-10">
+          <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
+            Welcome to <span className="wrap-none">Monnies Planner</span>
+          </h2>
+          <p className="mt-2 text-gray-600">
+            Embark on a journey of financial discovery with Monnies Planner. See beyond the horizon as we help you envision your dream life and understand the financial path to get there.
+          </p>
 
+          <div className="mt-8 space-y-6">
+            <Link href="/plans" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#17B890] hover:bg-[#5EEAD4]">
+              Start Planning
+            </Link>
+
+            <Link href="/subscribe" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#FA8334] hover:bg-[#B0F0E6]">
+              Subscribe to Newsletter
+            </Link>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Section 2 */}
+
+      <div className="mt-8 px-2">
+        <h2 className="text-3xl font-extrabold text-gray-900">
+          See how plans become reality
+        </h2>
+        <PlanView plans={plans as Plan[]} />
+      </div>
+    </>
   );
 };
 
