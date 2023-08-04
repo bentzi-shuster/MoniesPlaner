@@ -1,16 +1,10 @@
-import { PrismaClient } from '@prisma/client'
-
-    
-
-var primsa = new PrismaClient({
-    log: ['query', 'info', 'warn', 'error']
-})
+import prisma from "./prisma"
 
 export async function getPlans(){
    
     try{
        
-        const plans = await primsa.plan.findMany()
+        const plans = await prisma.plan.findMany()
         return {plans}
     }catch(error){
         return {error}
@@ -19,7 +13,7 @@ export async function getPlans(){
 
 export async function getPlanTitles(){
     try{
-        const plans = await primsa.plan.findMany({select:{title:true}})
+        const plans = await prisma.plan.findMany({select:{title:true}})
         return {plans}
     }catch(error){
         return {error}
@@ -28,7 +22,7 @@ export async function getPlanTitles(){
 
 export async function createPlan(title:string){
     try{
-        const plan = await primsa.plan.create({data:{
+        const plan = await prisma.plan.create({data:{
             title, 
             rent:100,
             groceries:100,
@@ -43,7 +37,8 @@ export async function createPlan(title:string){
             userSub:'123',
             visibility:true}})
         return {plan}
-    }catch(error){
-        return {error}
+    } catch (error) {
+        console.error(error);
+        return {error};
     }
 } 

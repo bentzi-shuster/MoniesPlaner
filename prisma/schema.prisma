@@ -30,7 +30,7 @@ model Plan {
   carModel            String?  // Optional field for car model
   visibility          Boolean  @default(false)
   createdAt           DateTime @default(now())
-  modifiedAt          DateTime?
+  modifiedAt          DateTime? @updatedAt
 }
 
 model CachedData {
