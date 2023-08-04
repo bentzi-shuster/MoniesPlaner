@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import PlanItem from "./PlanItem";
 import Image from 'next/image';
-import { Plan as PlanData } from "@prisma/client";
+import { plan as PlanData } from "@prisma/client";
 
 
 interface PlanGridProps {
