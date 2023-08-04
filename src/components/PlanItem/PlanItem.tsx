@@ -29,7 +29,7 @@ const PlanItem = ({ plan, onClick }: PlanItemProps) => {
         return (
             // Main Card Container
             <div
-                className="relative w-full h-[308px] overflow-hidden cursor-pointer"
+                className="relative w-full rounded-lg h-[308px] overflow-hidden cursor-pointer"
                 onClick={onClick}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}

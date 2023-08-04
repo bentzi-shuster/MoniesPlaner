@@ -25,9 +25,9 @@ const legalLinks = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-10 mb-4">
+    <footer className="mt-10">
       {/* Boxed Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 py-10 bg-[#1A202C] text-center text-neutral-600 dark:bg-[#1A202C] dark:text-white lg:text-left">
+      <div className="max-w-8xl mx-auto px-6 py-10 bg-[#1A202C] text-center text-neutral-600 dark:bg-[#1A202C] dark:text-white lg:text-left">
         <div className="flex items-center justify-center border-b-2 border-white p-6 dark:border-[#FA8334] lg:justify-between">
           <div className="mr-12 hidden lg:block">
             <span>Get connected with us on social networks:</span>

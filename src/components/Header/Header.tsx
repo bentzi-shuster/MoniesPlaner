@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const HeaderElm = () => {
   return (
-    <header className="bg-white flex items-center justify-between pl-5 h-[50px] shadow-sm shadow-stone-200">
+    <header className="bg-white flex items-center justify-between pl-5 h-[50px] shadow-sm shadow-stone-200 fixed top-0 w-full z-50">
       <Link href="/" className="flex items-center">
 
         <Image src="/monnies.svg" alt="Monnies Planner Logo" width={32} height={32} />
