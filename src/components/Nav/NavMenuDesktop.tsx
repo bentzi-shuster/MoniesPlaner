@@ -3,7 +3,17 @@ import React from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
 import Link from 'next/link';
 
-const NavMenuDesktop = ({navs, isLoggedIn}) => {
+type NavMenuProps = {
+  navs: {
+    Name: string,
+    Link: string,
+    Auth: boolean | null,
+    Description: string
+  }[],
+  isLoggedIn: boolean
+}
+
+const NavMenuDesktop: React.FC<NavMenuProps> = ({ navs, isLoggedIn }) => {
 
   let [linkpath,setLinkPath] = React.useState("/");
   return (

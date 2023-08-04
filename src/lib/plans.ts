@@ -30,11 +30,11 @@ export async function createPlan(title:string){
             transportation:100,
             entertainment:100,
             insurance:100,
-            vehiclePayment:100,
-            vehicleInsurance:100,
-            personalCare:100,
+            vehicle_payment:100,
+            vehicle_insurance:100,
+            personal_care:100,
             income:100,
-            userSub:'123',
+            user_sub:'123',
             visibility:true}})
         return {plan}
     } catch (error) {
