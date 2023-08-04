@@ -192,3 +192,80 @@ Given that the website is deployed to the staging and production environments:
 - When developers need to troubleshoot issues, the logging system should provide detailed logs for analysis.
 
 ---
+# Epic: Setting a PostgreSQL Docker Container Database
+
+**Objective:** Set up a PostgreSQL database using Docker containers to provide a scalable and easily manageable database solution for the application.
+
+**Acceptance Criteria:**
+- The PostgreSQL Docker container should be created with the necessary configurations and settings.
+- The database container should persist data even after the container is stopped or restarted.
+- The database container should be accessible from the host machine and other containers in the same network.
+- The database should be secured with appropriate credentials and access controls.
+- The setup process should be documented for future reference and maintenance.
+
+---
+
+## User Story 1: Create PostgreSQL Docker Container
+
+**Objective:** Set up a Docker container with PostgreSQL database.
+
+**Story:** As a DevOps engineer, I want to create a PostgreSQL container to ensure a consistent and reproducible database environment.
+
+**Acceptance Criteria:**
+Given that Docker is installed on the host machine:
+- When the PostgreSQL Docker container is created, it should use a specified PostgreSQL image from a reputable source.
+- When the container is started, the PostgreSQL database service should be running and ready to accept connections.
+
+---
+
+## User Story 2: Configure PostgreSQL Settings
+
+**Objective:** Customize PostgreSQL settings to suit the application's requirements.
+
+**Story:** As a database administrator, I want to configure PostgreSQL with appropriate settings for optimal performance and security.
+
+**Acceptance Criteria:**
+Given that the PostgreSQL Docker container is running:
+- When the necessary configurations (e.g., memory settings, connections) are applied, PostgreSQL should perform efficiently.
+- When security settings (e.g., authentication method, access controls) are enforced, the database should be adequately protected.
+
+---
+
+## User Story 3: Data Persistence and Backup
+
+**Objective:** Ensure data persistence and implement a backup strategy for the PostgreSQL container.
+
+**Story:** As a system administrator, I want to ensure that data remains intact and can be restored in case of container failure.
+
+**Acceptance Criteria:**
+Given that the PostgreSQL Docker container is running and data is stored in the database:
+- When the container is stopped and restarted, the data should persist across container lifecycles.
+- When a scheduled backup strategy is implemented, data should be backed up regularly to a safe location.
+
+---
+
+## User Story 4: Access and Connectivity
+
+**Objective:** Set up access and connectivity to the PostgreSQL container.
+
+**Story:** As a developer, I want to connect to the PostgreSQL database from the host machine and other containers.
+
+**Acceptance Criteria:**
+Given that the PostgreSQL Docker container is running:
+- When the necessary ports are exposed and mapped, the PostgreSQL service should be accessible from the host machine and other containers in the same network.
+- When connection credentials are provided, developers should be able to connect to the PostgreSQL database from their applications.
+
+---
+
+## User Story 5: Documentation and Knowledge Sharing
+
+**Objective:** Document the setup process and share knowledge about managing the PostgreSQL Docker container.
+
+**Story:** As a team member, I want to have clear documentation and knowledge-sharing sessions to support ongoing maintenance and troubleshooting.
+
+**Acceptance Criteria:**
+Given that the PostgreSQL Docker container is set up:
+- When the setup process is documented, the documentation should cover all necessary steps to recreate the environment.
+- When knowledge-sharing sessions are conducted, team members should be familiar with managing the PostgreSQL container.
+
+---
