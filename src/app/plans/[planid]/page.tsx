@@ -1,9 +1,9 @@
-import PlanView from "@/src/components/PlanView/PlanView"
+import PlanView from "@/src/components/PlanItem/PlanView"
 
 
 export default async function Account({params}:{params:{planid:string}}) {
     // const session = await getSession();
-    let plans = [
+    let plans2 = [
         {Name:"Plan A",Description:"Rob a bank",Cost:0,Income:0,Img:"https://picsum.photos/900/600"},
         {Name:"Plan B",Description:"Go To Jail",Cost:" my freedom",Income:0.01,Img:"https://picsum.photos/900/600"},
         {Name:"Plan C",Description:"Escape Jail",Cost:"However much the guards are willing to take",Income:0.01,Img:"https://picsum.photos/900/600"},
