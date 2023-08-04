@@ -1,6 +1,9 @@
 import { getSession } from "@auth0/nextjs-auth0";
 import PlanView from "../components/PlanView/PlanView";
-let plans = [
+import {getPlans} from "../lib/plans"
+import PlanItem from "../components/PlanItem/PlanItem";
+import NewPlanForm from "../components/PlanForm/NewPlanForm";
+let plans2 = [
   {Name:"Plan 1",Description:"This is a plan",Cost:1000,Income:2000,Img:"https://picsum.photos/900/600",id:4},
   {Name:"Plan 2",Description:"This is a plan on DRUGS",Cost:1000,Income:2000,Img:"https://picsum.photos/900/600",id:5},
   {Name:"Plan 3",Description:"This is a plan with a lot of money",Cost:1000,Income:2000,Img:"https://picsum.photos/900/600",id:6},
@@ -12,12 +15,13 @@ let plans = [
 const Home: React.FC = async() => {
   const session = await getSession();
  let loggedIn = session && session.user && session.user["name"];
+ const {plans} = await getPlans();
+ console.log(plans);
   return (
     (loggedIn ?
     <>
     <h1 className="text-3xl text-center font-bold pt-20" 
     >Browse Public Plans</h1>
-<PlanView plans={plans}/>
     </>
     :
   <>
@@ -42,8 +46,13 @@ const Home: React.FC = async() => {
               </a>
             </div>
           </div>
+          <NewPlanForm/>
+          <ul>
+            {plans?.map(plan =>(
+              <PlanItem key={plan.id} plan={plan}/>
+            ))}
+          </ul>
         </div>
-        <PlanView plans={plans}/>
       </>)
 
   );
