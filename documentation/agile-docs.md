@@ -27,32 +27,40 @@ Given that I access the website on a mobile device:
 
 
 ---
+## User Story 2: Create Responsive Hero Section
 
-## User Story 2: {Title}
+**Objective:** Design a responsive hero section that showcases the website's key features and adapts to different viewport sizes.
 
-**Objective:** {Details}
-
-**Story:** As a [type of user], I want [an action or feature], so that [benefit/value].
+**Story:** As a potential customer, I want to see an eye-catching hero section that highlights the website's value proposition and encourages me to explore further.
 
 **Acceptance Criteria:**
-Given [a certain context or initial state], when [a specific action is taken], then [a set of observable outcomes should occur].
+Given that I access the website on a desktop:
+- When I visit the homepage, I should see a hero section with a visually appealing layout that includes text and call-to-action buttons.
+- The hero section should resize and maintain its aspect ratio smoothly as I adjust the browser window size.
 
-**Given** [another context or initial state], **when** [a different action is taken], **then** [a different set of observable outcomes should occur].
+Given that I access the website on a mobile device:
+- When I visit the homepage, the hero section should adjust to fit the smaller screen size without losing legibility or visual appeal.
+- The call-to-action buttons should be easily tappable on a mobile touchscreen.
 
 ---
 
-## User Story 3: {Title}
+## User Story 3: Implement Responsive Pricing Table
 
-**Objective:** {Details}
+**Objective:** Develop a responsive pricing table that adjusts its layout based on the screen size to provide a seamless user experience.
 
-**Story:** As a [type of user], I want [an action or feature], so that [benefit/value].
+**Story:** As a potential customer, I want to compare different pricing plans in an organized and easy-to-read manner.
 
 **Acceptance Criteria:**
-Given [a certain context or initial state], when [a specific action is taken], then [a set of observable outcomes should occur].
+Given that I access the website on a desktop:
+- When I visit the pricing page, I should see a pricing table displaying different plans side by side with clear distinctions between features.
+- The pricing table should resize gracefully as I adjust the browser window size, ensuring all content remains visible.
 
-**Given** [another context or initial state], **when** [a different action is taken], **then** [a different set of observable outcomes should occur].
+Given that I access the website on a mobile device:
+- When I visit the pricing page, the pricing table should stack each plan vertically for better readability on smaller screens.
+- The pricing details and feature descriptions should be legible without the need for horizontal scrolling.
 
 ---
+
 
 # Epic: Playwright Testing for Website Functionality and Compliance
 
