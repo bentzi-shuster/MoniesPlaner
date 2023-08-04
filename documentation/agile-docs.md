@@ -10,16 +10,21 @@
 
 ---
 
-## User Story 1: {Title}
+## User Story 1: Implement Responsive Navbar
+**Objective:** Create a responsive navbar component that adjusts its layout and appearance based on the user's screen size.
 
-**Objective:** {Details}
-
-**Story:** As a [type of user], I want [an action or feature], so that [benefit/value].
-
+**Story:** As a website visitor, I want to easily navigate through the site's sections and access the menu items regardless of the device I am using
 **Acceptance Criteria:**
-Given [a certain context or initial state], when [a specific action is taken], then [a set of observable outcomes should occur].
+Given that I access the website on a desktop:
+- When I visit the site, I should see a full-width navbar with all menu items displayed in a horizontal layout.
+- When I resize the window, the navbar should collapse into a mobile-friendly hamburger menu.
 
-**Given** [another context or initial state], **when** [a different action is taken], **then** [a different set of observable outcomes should occur].
+Given that I access the website on a mobile device:
+- When I visit the site, I should see a hamburger menu icon indicating the presence of a menu.
+- When I tap the hamburger icon, a dropdown menu should appear with all menu items.
+
+
+
 
 ---
 
