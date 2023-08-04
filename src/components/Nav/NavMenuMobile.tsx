@@ -9,7 +9,18 @@ import Link from 'next/link';
       CheckIcon,
       ChevronRightIcon,
     } from '@radix-ui/react-icons';
-const NavMenuMobile = ({navs, isLoggedIn}) => {
+
+type NavMenuProps = {
+  navs: {
+    Name: string,
+    Link: string,
+    Auth: boolean | null,
+    Description: string
+  }[],
+  isLoggedIn: boolean
+}
+
+const NavMenuMobile: React.FC<NavMenuProps> = ({ navs, isLoggedIn }) => {
     
       return (
         <DropdownMenu.Root >
