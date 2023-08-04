@@ -11,9 +11,33 @@ datasource db {
 }
 
 // the User table is used to store the user's email and username from the auth provider
-model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model Plan {
+  id                  Int      @id @default(autoincrement())
+  title               String
+  rent                Float
+  groceries           Float
+  utilities           Float
+  transportation      Float
+  entertainment       Float
+  propertyTax         Float?
+  insurance           Float
+  vehiclePayment      Float
+  vehicleInsurance    Float
+  personalCare        Float
+  income              Float
+  userSub             String   // User's unique identifier from Auth0 (`sub`)
+  carMake             String?  // Optional field for car make
+  carModel            String?  // Optional field for car model
+  visibility          Boolean  @default(false)
+  createdAt           DateTime @default(now())
+  modifiedAt          DateTime?
 }
+
+model CachedData {
+  id              Int      @id @default(autoincrement())
+  url             String   @unique
+  data            Json     // Store the scraped data as JSON
+  createdAt           DateTime @default(now())
+  modifiedAt          DateTime?
+}
+
