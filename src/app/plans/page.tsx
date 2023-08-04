@@ -1,4 +1,4 @@
-import PlanView from "@/src/components/PlanItem/PlanView";
+import PlanGrid from "@/src/components/PlanItem/PlanGrid";
 import { getPlans } from "@/src/lib/plans";
 import { withPageAuthRequired, getSession, UpdateSession } from '@auth0/nextjs-auth0';
 
@@ -15,7 +15,7 @@ export default withPageAuthRequired(async function Account() {
     <div>
       <h1 className="text-3xl text-center font-bold pt-20"
       >My Plans</h1>
-      <PlanView plans={plans} />
+      <PlanGrid plans={plans} />
     </div>
   )
 }, { returnTo: '/plans' })
