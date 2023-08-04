@@ -15,7 +15,7 @@ const NavMenuMobile = ({navs, isLoggedIn}) => {
         <DropdownMenu.Root >
           <DropdownMenu.Trigger asChild>
             <button
-              className="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-emerald-800 bg-white outline-none hover:bg-green-50 focus:shadow-[0_0_0_2px] focus:shadow-black"
+              className="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-emerald-800 bg-transparent outline-none hover:bg-green-50 focus:shadow-[0_0_0_2px] focus:shadow-black"
               aria-label="Open Menu"
             >
               <HamburgerMenuIcon />
