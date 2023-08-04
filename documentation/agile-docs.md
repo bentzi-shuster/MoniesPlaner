@@ -3,9 +3,10 @@
 **Objective:** Implement responsive frontend components using Tailwind CSS and integrate them into the Next.js application to create a visually appealing and user-friendly interface that adapts to different screen sizes and devices.
 
 **Acceptance Criteria:**
-- {Criteria 1}
-- {Criteria 2}
-- ...
+- The frontend components should be implemented using Tailwind CSS.
+- The components should be responsive and adapt well to different screen sizes, including desktop, tablet, and mobile devices.
+- The frontend components should be integrated seamlessly into the existing Next.js application.
+
 
 ---
 
