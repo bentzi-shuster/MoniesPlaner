@@ -552,3 +552,57 @@ Given the AI-powered image generation is implemented on the website:
 4. The reports highlight areas where users have exceeded budget limits and offer suggestions for adjustments.
 
 ---
+# Epic: Incorporation of Role-Based Access Control for Data Security
+
+**Objective**: Implement role-based access control (RBAC) to enhance data security and control user access to sensitive information within the system.
+
+### Acceptance Criteria:
+1. The system allows administrators to define user roles and assign specific permissions to each role.
+2. User authentication and authorization are integrated to ensure access is granted only to authorized users.
+3. The RBAC system supports granular permissions to restrict access at the individual resource level.
+4. Role assignments and permission changes are logged for auditing and accountability.
+5. Users are redirected to appropriate pages based on their roles after successful login.
+
+---
+
+## User Story 1: Role and Permission Management
+
+**Objective**: As an administrator, I want to manage user roles and permissions to control data access and protect sensitive information.
+
+**Story**: As an administrator, I want the ability to create new user roles with specific sets of permissions. I should also be able to modify existing roles or remove them if no longer needed. This will ensure that the right users have the necessary access levels.
+
+### Acceptance Criteria:
+
+1. The RBAC system provides an intuitive interface for administrators to create, edit, and delete user roles.
+2. Each role can be assigned a set of predefined or custom permissions that determine the actions users can perform.
+3. Administrators can assign roles to users individually or in bulk.
+
+---
+
+## User Story 2: Authentication and Authorization
+
+**Objective**: As a user, I want a secure and seamless authentication process that grants me access based on my assigned role.
+
+**Story**: As a user, I expect a user-friendly login process that verifies my identity and grants me access to the system based on my assigned role. Unauthorized access attempts should be blocked.
+
+### Acceptance Criteria:
+
+1. The authentication process validates user credentials against the stored database of authorized users.
+2. Users receive appropriate error messages for failed login attempts (e.g., incorrect password, non-existent user).
+3. Upon successful login, users are redirected to specific pages based on their assigned roles and permissions.
+
+---
+
+## User Story 3: Granular Access Control
+
+**Objective**: As a data administrator, I want to control access to sensitive data at a granular level for different user roles.
+
+**Story**: As a data administrator, I want to define and manage access to specific data resources for different user roles. Some data may be sensitive and should only be accessible to users with the appropriate permissions.
+
+### Acceptance Criteria:
+
+1. The RBAC system allows administrators to specify which data resources are accessible to each user role.
+2. Unauthorized users attempting to access restricted data are denied and redirected to appropriate pages.
+3. Data access restrictions should be enforced across different areas of the system, including database queries and API requests.
+
+---
