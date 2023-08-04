@@ -1,4 +1,4 @@
-import PlanView from "@/src/components/PlanItem/PlanView"
+import PlanGrid from "@/src/components/PlanItem/PlanGrid"
 
 
 export default async function Account({params}:{params:{planid:string}}) {
