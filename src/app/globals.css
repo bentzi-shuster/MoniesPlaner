@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-  background-color: #f4faf8;
+  background-color: #ffffff;
   margin: 0;
-  color: #08120d;
+  color: #1A202C;
   position: relative;
   box-sizing: border-box;
   min-height: 100vh;
