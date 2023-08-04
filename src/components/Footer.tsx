@@ -25,10 +25,11 @@ const legalLinks = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-10">
+    <footer className="mt-10  bottom-0 w-full z-50">
       {/* Boxed Footer Content */}
       <div className="max-w-8xl mx-auto px-6 py-10 bg-[#1A202C] text-center text-neutral-600 dark:bg-[#1A202C] dark:text-white lg:text-left">
         <div className="flex items-center justify-center border-b-2 border-white p-6 dark:border-[#FA8334] lg:justify-between">
+          {/* Left Logo */}
           <div className="mr-12 hidden lg:block">
             <span>Get connected with us on social networks:</span>
           </div>
@@ -40,19 +41,20 @@ const Footer: React.FC = () => {
             ))}
           </div>
         </div>
-
+        {/* Footer Links */}
         <div className="mx-6 py-10 text-center md:text-left">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div>
+              <div className="mt-4 flex justify-center">
+                <Link href="/"><Image src="/monnies.svg" alt="Monnies Planner Logo" width={120} height={120} /></Link>
+              </div>
               <h6 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
                 MonniesPlanner:
               </h6>
               <p>
                 Your Path to Financial Success!
               </p>
-              <div className="mt-4 flex justify-center">
-                <Link href="/"><Image src="/monnies.svg" alt="Monnies Planner Logo" width={120} height={120} /></Link>
-              </div>
+
             </div>
             <div>
               <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
@@ -78,26 +80,25 @@ const Footer: React.FC = () => {
                 </p>
               ))}
             </div>
+            {/* Newsletter */}
             <div>
               <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-                Contact
+                Newsletter
               </h6>
-              <p className="mb-4 flex items-center justify-center md:justify-start">
-                {/* Contact icon SVG content */}
-                New York, NY 10012, US
-              </p>
-              <p className="mb-4 flex items-center justify-center md:justify-start">
-                {/* Email icon SVG content */}
-                info@example.com
-              </p>
-              <p className="flex items-center justify-center md:justify-start">
-                {/* Phone icon SVG content */}
-                + 01 234 567 88
-              </p>
+              <div className="form-control w-full max-w-xs mx-auto md:mx-0">
+                <label className="label block text-white">
+                  <span className="label-text">Enter your email address</span>
+                </label>
+                <div className="relative">
+                  <input type="text" placeholder="   username@site.com" className="input input-bordered w-full pr-20 rounded-lg h-12" />
+                  <button className="btn absolute top-0 right-0 rounded-r-lg text-white bg-[#FA8334] hover:bg-[#B0F0E6] h-12">Subscribe</button>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
-
+        {/* Footer Bottom */}
         <div className="bg-[#1A202C] p-6 text-center dark:bg-[#1A202C] rounded-b-lg">
           <span>© {new Date().getFullYear()} Copyright:</span>
           <Link href="/" className="font-semibold text-neutral-600 dark:text-[#17B890]">
