@@ -269,3 +269,79 @@ Given that the PostgreSQL Docker container is set up:
 - When knowledge-sharing sessions are conducted, team members should be familiar with managing the PostgreSQL container.
 
 ---
+# Epic: Creation of Webpages for a Content-Driven Website
+
+**Objective:** Develop webpages for a content-driven website, including Home, Plans, All Plans, My Plans, and Account pages, to provide a seamless and engaging user experience.
+
+**Acceptance Criteria:**
+- Each webpage should be designed with a user-friendly layout and responsive design to adapt to different screen sizes and devices.
+- The content on each page should be dynamic and fetched from a database or content management system (CMS).
+- The website's navigation should be intuitive, allowing users to easily access different sections and features.
+- The webpages should be optimized for performance and loading speed.
+
+---
+
+## User Story 1: Create Home Page
+
+**Objective:** Design and develop the website's home page to introduce the website's core features and value proposition.
+
+**Story:** As a website visitor, I want to see an informative and visually appealing home page that piques my interest to explore further.
+
+**Acceptance Criteria:**
+Given that I access the website's home page:
+- When the page loads, I should see a clean and engaging layout with clear information about the website's purpose.
+- When I scroll down, I should find sections with relevant content, such as featured plans or user testimonials.
+
+---
+
+## User Story 2: Implement Plans Page
+
+**Objective:** Create a webpage to display different plans offered by the website.
+
+**Story:** As a potential customer, I want to see the available plans, their features, and pricing information in one place.
+
+**Acceptance Criteria:**
+Given that I navigate to the Plans page:
+- When the page loads, I should see a well-structured layout with all available plans listed.
+- Each plan should have details about its features, pricing, and any applicable discounts or promotions.
+
+---
+
+## User Story 3: Build All Plans Page
+
+**Objective:** Develop a webpage that aggregates all plans from various categories for easy comparison.
+
+**Story:** As a user, I want to see a comprehensive list of all available plans in one location for convenient comparison.
+
+**Acceptance Criteria:**
+Given that I visit the All Plans page:
+- When the page loads, I should find a user-friendly layout that displays plans from different categories, such as basic, premium, and business.
+- Each plan should have a brief description and a link to view more details.
+
+---
+
+## User Story 4: Create My Plans Page
+
+**Objective:** Design a personalized webpage for users to view and manage their selected plans.
+
+**Story:** As a registered user, I want to access a dedicated page that shows my chosen plans and allows me to make changes if needed.
+
+**Acceptance Criteria:**
+Given that I log in to my account and visit the My Plans page:
+- When the page loads, I should see a dashboard-like layout with a list of my selected plans and their details.
+- I should have the option to modify or cancel my plans from this page.
+
+---
+
+## User Story 5: Implement Account Page
+
+**Objective:** Develop a user account page where users can manage their account settings and preferences.
+
+**Story:** As a user, I want to have access to an account page to update my profile information and security settings.
+
+**Acceptance Criteria:**
+Given that I log in to my account and access the Account page:
+- When the page loads, I should see a form or section where I can update my personal information, such as name and email address.
+- I should also have the option to change my password and manage other account-related settings.
+
+---
