@@ -1,5 +1,5 @@
 "use client"
-import { Plan } from "@prisma/client";
+import { plan } from "@prisma/client";
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import { OpenInNewWindowIcon } from '@radix-ui/react-icons';
 import { useCallback } from 'react';
 
 type PlanItemProps = {
-    plan: Plan
+    plan: plan
     // function prop for when the plan is clicked
     onClick: () => void
 }
@@ -54,14 +54,14 @@ const PlanItem = ({ plan, onClick }: PlanItemProps) => {
                     {/* Overlay Card Title & Date*/}
                     <div className={`flex justify-between items-start mb-1 transition-opacity duration-300 ${showOverlay ? 'opacity-100' : 'opacity-0'}`}>
                         <div className="text-xs font-bold text-[#FA8334]">{plan.title}</div>
-                        <p className="text-xs font-medium">{plan.createdAt.toLocaleString('en-US', { month: 'short' })} {plan.createdAt.getFullYear()}</p> {/* placeholder date text */}
+                        <p className="text-xs font-medium">{plan.created_at.toLocaleString('en-US', { month: 'short' })} {plan.created_at.getFullYear()}</p> {/* placeholder date text */}
                     </div>
-                    <p className={`text-sm transition-opacity duration-300 ${showOverlay ? 'opacity-100' : 'opacity-0'}`}>Cost: ${plan.insurance} </p>
+                    <p className={`text-sm transition-opacity duration-300 ${showOverlay ? 'opacity-100' : 'opacity-0'}`}>Insurance: ${plan.insurance} </p>
                     <p className={`text-sm transition-opacity duration-300 ${showOverlay ? 'opacity-100' : 'opacity-0'}`}>Income: ${plan.income} </p>
                     {/* the avatar and username */}
                     <div className={`w-6 h-6 overflow-hidden bg-gray-300 rounded-full transition-opacity duration-300 ${showOverlay ? 'opacity-100' : 'opacity-0'}`}>
                         <Image src="/assets/images/avatars/c.png" alt="avatar" width={24} height={24} className="object-cover w-full h-full" />
-                        <p className="font-medium">User{plan.userSub}</p> {/* placeholder username */}
+                        <p className="font-medium">User{plan.user_sub}</p> {/* placeholder username */}
                     </div>
                 </div>
             </div>

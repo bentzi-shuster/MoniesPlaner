@@ -3,7 +3,7 @@ import PlanGrid from "../components/PlanItem/PlanGrid";
 import { getPlans } from "../lib/plans"
 import ScrollButton from "../components/ScrollButton";
 import NewPlanForm from "../components/PlanForm/NewPlanForm";
-import { Plan } from "@prisma/client";
+import { plan } from "@prisma/client";
 import Link from "next/link";
 
 
@@ -46,7 +46,7 @@ const Home = async () => {
               Explore public plans created by the community. Get inspired and <Link href="/plan" className="text-[#FA8334] hover:underline">start planning</Link>.
             </p>
           </div>
-          <PlanGrid plans={plans as Plan[]} />
+          <PlanGrid plans={plans as plan[]} />
         </div>
       </div>
     </>
