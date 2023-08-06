@@ -14,4 +14,6 @@ export const GET = handleAuth({
       },
       returnTo: "/",
     }),
+    //@ts-ignore
+    baseUrl: "http://localhost:3000",
   });
