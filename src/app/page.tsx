@@ -40,7 +40,7 @@ const Home = async () => {
               See how plans become reality
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-              Explore public plans created by the community. Get inspired and <Link href="/plan" className="text-[#FA8334] hover:underline">start planning</Link>.
+              Explore public plans created by the community. Get inspired and <Link href="/plans" className="text-[#FA8334] hover:underline">start planning</Link>.
             </p>
           </div>
           <PlanGrid plans={plans as plan[]} />
