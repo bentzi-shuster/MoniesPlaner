@@ -16,7 +16,7 @@ const DeleteAccDialog = () => (
           Are you absolutely sure?
         </AlertDialog.Title>
         <AlertDialog.Description className="text-gray-600 mt-4 mb-5 text-base leading-normal">
-          Hehe you can't delete your account yet
+          Hehe you can&apos;t delete your account yet
         </AlertDialog.Description>
         <div className="flex justify-end gap-4">
           <AlertDialog.Cancel asChild>
