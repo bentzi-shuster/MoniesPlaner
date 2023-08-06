@@ -8,39 +8,39 @@ import * as Accordion from '@radix-ui/react-accordion';
 
 
 
+// function makeAccordionItem(title: string, children:ReactNode ,id: string) {
+
+// return (
+//     <Accordion.Item value={id} className='mt-px overflow-hidden first:mt-0 first:rounded-t last:rounded-b focus-within:relative focus-within:z-10 border-b border-mauve6'>
+//       <Accordion.Header className="flex">
+//         <Accordion.Trigger className="text-green-700 shadow-mauve6 hover:bg-mauve2 group flex h-[45px] flex-1 cursor-default items-center justify-between bg-white px-5 text-[15px] leading-none shadow-[0_1px_0] outline-none" >
+//             {title}
+//             <ChevronDownIcon
+//         className="text-green-800 ease-[cubic-bezier(0.87,_0,_0.13,_1)] transition-transform duration-300 group-data-[state=open]:rotate-180 p-1.5 ml-2 flex-shrink-0 w-5 h-5 transform"
+//         aria-hidden
+//       />
+//         </Accordion.Trigger>
+//       </Accordion.Header>
+//       <Accordion.Content className="text-mauve11 bg-mauve2 data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-[15px]">
+//         <div className="p-5">
+//             {
+//               children
+//             }
+//         </div>
+//       </Accordion.Content>
+//     </Accordion.Item>
+// )
+// }
+
+
+
 const ViewPlanPopup = ({ plan, onClose }: { plan: plan | null, onClose: () => void }) => {
-
-
-
-function makeAccordionItem(title: string, children:ReactNode ,id: string) {
-
-return (
-    <Accordion.Item value={id} className='mt-px overflow-hidden first:mt-0 first:rounded-t last:rounded-b focus-within:relative focus-within:z-10 border-b border-mauve6'>
-      <Accordion.Header className="flex">
-        <Accordion.Trigger className="text-green-700 shadow-mauve6 hover:bg-mauve2 group flex h-[45px] flex-1 cursor-default items-center justify-between bg-white px-5 text-[15px] leading-none shadow-[0_1px_0] outline-none" >
-            {title}
-            <ChevronDownIcon
-        className="text-green-800 ease-[cubic-bezier(0.87,_0,_0.13,_1)] transition-transform duration-300 group-data-[state=open]:rotate-180 p-1.5 ml-2 flex-shrink-0 w-5 h-5 transform"
-        aria-hidden
-      />
-        </Accordion.Trigger>
-      </Accordion.Header>
-      <Accordion.Content className="text-mauve11 bg-mauve2 data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-[15px]">
-        <div className="p-5">
-            {
-              children
-            }
-        </div>
-      </Accordion.Content>
-    </Accordion.Item>
-)
-}
 
 
   return (
     <>
       {/* tailwind popup */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-50" 
+      {/* <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-50" 
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           onClose();
@@ -96,9 +96,9 @@ return (
     <Tabs.Content
       className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
       value="Car"
-    >
+    > */}
       {/* car */}
-
+{/* 
   <Accordion.Root type="multiple" className="border border-mauve6 rounded-md overflow-hidden" defaultValue={['car', 'car_insurance', "car_payment","transportation"]}>
     {makeAccordionItem("Car Type",<p>You have a {plan?.car_make + " " + plan?.car_model}</p>,"car")}
     {makeAccordionItem("Transportation",<p>You spend ${plan?.transportation} on transportation every month</p>,"transportation")}
@@ -112,9 +112,9 @@ return (
     <Tabs.Content
       className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
       value="Lifestyle"
-    >
+    > */}
     {/* lifestyle */}
-<Accordion.Root type="multiple" className="border border-mauve6 rounded-md overflow-hidden" defaultValue={["insurance", "entertainment", "groceries", "personal_care", "property_tax", "utilities", "rent"]}>
+{/* <Accordion.Root type="multiple" className="border border-mauve6 rounded-md overflow-hidden" defaultValue={["insurance", "entertainment", "groceries", "personal_care", "property_tax", "utilities", "rent"]}>
     {makeAccordionItem("Entertainment",<p>You spend ${plan?.entertainment} on entertainment every month</p>,"entertainment")}
     {makeAccordionItem("Groceries",<p>You spend ${plan?.groceries} on groceries every month</p>,"groceries")}
     {makeAccordionItem("Personal Care",<p>You spend ${plan?.personal_care} on personal care every month</p>,"personal_care")}
@@ -128,19 +128,19 @@ return (
     <Tabs.Content
       className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
       value="Income"
-    >
+    > */}
         {/* income */}
-    <h1>Your Income is ${plan?.income}</h1>
+    {/* <h1>Your Income is ${plan?.income}</h1> */}
     {/*@ts-ignore*/}    
-    you spend ${[plan?.entertainment ,plan?.groceries,plan?.personal_care,plan?.property_tax,plan?.utilities,plan?.rent].reduce((a, b) => isNaN(parseInt(a)) ? parseInt(b) : parseInt(a) + parseInt(b), 0)} on expenses every month
+    {/* you spend ${[plan?.entertainment ,plan?.groceries,plan?.personal_care,plan?.property_tax,plan?.utilities,plan?.rent].reduce((a, b) => isNaN(parseInt(a)) ? parseInt(b) : parseInt(a) + parseInt(b), 0)} on expenses every month */}
     
-    </Tabs.Content>
+    {/* </Tabs.Content>
   </Tabs.Root>
 
         </div>
         </div>
         </div>
-        
+         */}
         </>
     );
 };
