@@ -15,4 +15,4 @@ export const GET = handleAuth({
       returnTo: "/",
     }),
   });
-export const GET = handleAuth({baseUrl: process.env.AUTH0_BASE_URL});
+// export const GET = handleAuth({baseUrl: process.env.AUTH0_BASE_URL});
