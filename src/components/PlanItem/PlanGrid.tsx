@@ -31,14 +31,14 @@ const PlanGrid: React.FC<PlanGridProps> = ({ plans }) => {
                         plan={plan}
                     />
                 ))}
-                ({activePlan && (
+                {/* ({activePlan && (
                     <ViewPlanPopup plan={activePlan} onClose={() => {
                         setActivePlan(null)
                         document.body.style.overflow = '';
                     }
                     } />
                 )
-                })
+                }) */}
             </div>
         </div>
     )
