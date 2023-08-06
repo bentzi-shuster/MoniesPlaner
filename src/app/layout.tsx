@@ -13,7 +13,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
       <UserProvider>
-        <body>
+        <body> 
       <HeaderElm />
         {children}
       <Footer />
