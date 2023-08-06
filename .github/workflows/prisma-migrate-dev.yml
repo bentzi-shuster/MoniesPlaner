@@ -2,11 +2,11 @@ name: Prisma Migrate - Dev
 
 on:
   push:
-    branches: [dev]
+    branches: [view-plan-popup]
     paths:
       - "./prisma/**/*.*"
   workflow_dispatch:
-    branches: [dev]
+    branches: [view-plan-popup]
 
 jobs:
   setup:
