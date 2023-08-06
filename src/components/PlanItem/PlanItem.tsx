@@ -35,7 +35,7 @@ const PlanItem = ({ plan, onClick }: PlanItemProps) => {
                 onMouseLeave={handleMouseLeave}
             >
                 {/* Main Card Background Image */}
-                <Image src="https://cdn.discordapp.com/attachments/743166351891365989/1136335631535067166/IMG_9841.png" alt={plan?.title} layout="fill" objectFit="cover" objectPosition="center" />
+                <Image src="https://cdn.discordapp.com/attachments/1126624768704118834/1137866664327782571/47920001.png" alt={plan?.title} layout="fill" objectFit="cover" objectPosition="center" />
                 {/* Overlay */}
                 <div
                     className={`absolute bottom-4 left-4 right-4 px-4 py-3 bg-[#F9FAFB] rounded-lg transition-opacity duration-300 ${showOverlay ? 'pointer-events-auto' : 'opacity-0 pointer-events-none'
