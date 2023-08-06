@@ -1,10 +1,12 @@
 import { withPageAuthRequired, getSession } from '@auth0/nextjs-auth0';
 import Link from 'next/link';
 import DeleteAccDialog from '@/src/components/DeleteAccDialog';
+import { getProvider } from '@/src/lib/getProvider';
+import getEmail from '@/src/lib/getEmail';
+
 
 export default withPageAuthRequired(async function Account() {
     const session = await getSession();
-
     return (
         <div className="min-h-screen bg-gray-50 px-4 py-16">
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -19,11 +21,11 @@ export default withPageAuthRequired(async function Account() {
                         <div>
                             <h2 className="text-xl font-semibold text-gray-800">Profile Details</h2>
                             <p>Name: {session?.user.name}</p>
-                            <p>Email: {session?.user.email}</p>
+                            <p>Email: {getEmail(session)}</p>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold text-gray-800">Account Provider</h2>
-                            <div className="text-[#17B890]">Provider: {session?.user.Provider} </div>
+                            <div className="text-[#17B890]">Provider: {getProvider(session)}</div>
                         </div>
                         <div>
                             <h2 className="text-xl font-semibold text-gray-800">Actions</h2>
