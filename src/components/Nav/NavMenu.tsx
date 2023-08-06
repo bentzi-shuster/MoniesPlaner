@@ -29,7 +29,7 @@ const NavMenu = () => {
   let isLoggedIn = !!user?.user?.name; // Convert to boolean
 
   let navs = [
-    { Name: (isLoggedIn ? "All Plans" : "Home"), Link: "/", Auth: null, Description: (isLoggedIn ? "Browse my plans" : "Home Page") },
+    { Name: (isLoggedIn ? "All Plans" : "Home"), Link: (isLoggedIn ? "/plans/1" : "/"), Auth: null, Description: (isLoggedIn ? "Browse my plans" : "Home Page") },
     { Name: "My Plans", Link: "/plans", Auth: true, Description: "Browse my plans" },
     { Name: "Account", Link: "/account", Auth: true, Description: "Manage my account" },
     { Name: "Logout", Link: "/api/auth/logout", Auth: true, Description: "Logout of my account" },
