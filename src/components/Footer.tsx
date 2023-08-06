@@ -8,7 +8,7 @@ const socialNetworks = [
   { icon: <GitHubLogoIcon />, url: '#!' },
   { icon: <DiscordLogoIcon />, url: '#!' },
   { icon: <VercelLogoIcon />, url: '#!' },
-]; 
+];
 
 const companyLinks = [
   { label: 'About Us', url: '#' },
