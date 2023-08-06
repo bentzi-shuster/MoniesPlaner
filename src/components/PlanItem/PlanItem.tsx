@@ -36,19 +36,9 @@ const PlanItem = ({ plan, onClick }: PlanItemProps) => {
             >
                 {/* Main Card Background Image */}
                 <Image src="https://cdn.discordapp.com/attachments/743166351891365989/1136335631535067166/IMG_9841.png" alt={plan?.title} layout="fill" objectFit="cover" objectPosition="center" />
-                {/* Mobile Popout Link */}
-                <Link
-                    href={`/plans/` + plan.id}
-                    className="absolute top-0 right-0 p-2 rounded-full bg-white bg-opacity-70 transition duration-250 ease-in-out mr-2 mt-2 border border-green-700 z-10 lg:hidden"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <OpenInNewWindowIcon />
-                </Link>
-
                 {/* Overlay */}
                 <div
-                    className={`absolute bottom-4 left-4 right-4 px-4 py-3 bg-[#17B890] rounded-lg transition-opacity duration-300 ${showOverlay ? 'pointer-events-auto' : 'opacity-0 pointer-events-none'
+                    className={`absolute bottom-4 left-4 right-4 px-4 py-3 bg-[#F9FAFB] rounded-lg transition-opacity duration-300 ${showOverlay ? 'pointer-events-auto' : 'opacity-0 pointer-events-none'
                         }`}
                 >
                     {/* Overlay Card Title & Date*/}
