@@ -13,7 +13,7 @@ const PlanGrid: React.FC<PlanGridProps> = ({ plans }) => {
     const [activePlan, setActivePlan] = useState<PlanData | null>(null);
     const handlePlanClick = (plan: PlanData) => {
         setActivePlan(plan);
-        document.body.style.overflow = 'hidden';
+        // document.body.style.overflow = 'hidden';
     };
     if (!plans) {
         return <p>Loading...</p>
