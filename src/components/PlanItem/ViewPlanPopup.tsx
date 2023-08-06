@@ -1,14 +1,10 @@
+"use client"
 import React, { ReactNode } from 'react';
 import { plan } from "@prisma/client";
 import Image from 'next/image';
 import * as Tabs from '@radix-ui/react-tabs';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import * as Accordion from '@radix-ui/react-accordion';
-
-
-
- 
-
 
 
 
