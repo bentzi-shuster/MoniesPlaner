@@ -2,10 +2,8 @@ import { getSession } from "@auth0/nextjs-auth0";
 import PlanGrid from "../components/PlanItem/PlanGrid";
 import { getPlans } from "../lib/plans"
 import ScrollButton from "../components/ScrollButton";
-import NewPlanForm from "../components/PlanForm/NewPlanForm";
 import { plan } from "@prisma/client";
 import Link from "next/link";
-
 
 const Home = async () => {
   const session = await getSession();
@@ -27,8 +25,7 @@ const Home = async () => {
             <Link href="/plans" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#17B890] hover:bg-[#5EEAD4]">
               Start Planning
             </Link>
-
-            <ScrollButton targetId="planSection" />
+            <ScrollButton targetId="planSection" contentText="See Public Plans" />
           </div>
         </div>
 
@@ -43,7 +40,7 @@ const Home = async () => {
               See how plans become reality
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-              Explore public plans created by the community. Get inspired and <Link href="/plan" className="text-[#FA8334] hover:underline">start planning</Link>.
+              Explore public plans created by the community. Get inspired and <Link href="/plans" className="text-[#FA8334] hover:underline">start planning</Link>.
             </p>
           </div>
           <PlanGrid plans={plans as plan[]} />
