@@ -9,35 +9,29 @@ const NewPlanForm = () => {
     const name = data.get('name');
     if (!name || typeof name !== 'string') return;
 
-    // Call server to create a plan
     await createPlanAction(name);
-
-    // Reset the form
     formRef.current?.reset();
-
-    // Redirect to the new plan
-    // Implement the redirection logic here
   }
 
   return (
-    <form ref={formRef} action={action} className="p-4 border rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold mb-4">Create a new Plan</h2>
+    <form ref={formRef} action={action} className="max-w-md mx-auto p-6 bg-white border border-gray-200 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-extrabold mb-6 text-gray-800">Start a New Plan</h2>
       <div className="mb-4">
-        <label htmlFor="name" className="block font-semibold">Name</label>
-        <input type="text" name="name" className="block w-full border rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <label htmlFor="name" className="block text-sm font-medium text-gray-600">Plan Name</label>
+        <input type="text" name="name" className="block w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#17B890] transition duration-150 ease-in-out" />
       </div>
 
       <div className="mb-4">
-        <label htmlFor="car" className="block font-semibold">Car Link</label>
-        <input type="text" name="car" className="block w-full border rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <label htmlFor="car" className="block text-sm font-medium text-gray-600">Car Link</label>
+        <input type="text" name="car" className="block w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#17B890] transition duration-150 ease-in-out" />
       </div>
 
       <div className="mb-4">
-        <label htmlFor="house" className="block font-semibold">House Link</label>
-        <input type="text" name="house" className="block w-full border rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <label htmlFor="house" className="block text-sm font-medium text-gray-600">House Link</label>
+        <input type="text" name="house" className="block w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#17B890] transition duration-150 ease-in-out" />
       </div>
 
-      <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Generate Plan</button>
+      <button type="submit" className="w-full bg-[#17B890] text-white py-2 px-4 rounded-lg hover:bg-[#5EEAD4] transition duration-200 ease-in-out">Generate</button>
     </form>
   );
 };
