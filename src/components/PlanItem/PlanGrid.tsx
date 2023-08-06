@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import PlanItem from "./PlanItem";
 import Image from 'next/image';
 import { plan as PlanData } from "@prisma/client";
+import ViewPlanPopup from "./ViewPlanPopup";
 
 
 interface PlanGridProps {
@@ -12,6 +13,7 @@ const PlanGrid: React.FC<PlanGridProps> = ({ plans }) => {
     const [activePlan, setActivePlan] = useState<PlanData | null>(null);
     const handlePlanClick = (plan: PlanData) => {
         setActivePlan(plan);
+        document.body.style.overflow = 'hidden';
     };
     if (!plans) {
         return <p>Loading...</p>
@@ -29,6 +31,14 @@ const PlanGrid: React.FC<PlanGridProps> = ({ plans }) => {
                         plan={plan}
                     />
                 ))}
+                ({activePlan && (
+                    <ViewPlanPopup plan={activePlan} onClose={() => {
+                        setActivePlan(null)
+                        document.body.style.overflow = '';
+                    }
+                    } />
+                )
+                })
             </div>
         </div>
     )
