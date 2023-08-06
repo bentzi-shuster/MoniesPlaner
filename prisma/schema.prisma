@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// the User table is used to store the user's email and username from the auth provider
+
+model plan {
+  id                  Int      @id @default(autoincrement())
+  title               String
+  rent                Float
+  groceries           Float
+  utilities           Float
+  transportation      Float
+  entertainment       Float
+  property_tax         Float?
+  insurance           Float
+  vehicle_payment      Float
+  vehicle_insurance    Float
+  personal_care        Float
+  income              Float
+  user_sub             String   // User's unique identifier from Auth0 (`sub`)
+  car_make             String?  // Optional field for car make
+  car_model            String?  // Optional field for car model
+  visibility          Boolean   // 'public' or 'private' for plan visibility
+  created_at           DateTime @default(now())
+  modified_at          DateTime?
+}
+
+model cached_data {
+  id              Int      @id @default(autoincrement())
+  url             String   @unique
+  data            Json     // Store the scraped data as JSON
+  created_at           DateTime @default(now())
+  modified_at          DateTime?
+}
+

@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+  color: #1A202C;
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 42rem;
+  margin: 1.5rem auto;
+}
+
+footer{
+  color: #020905;
+}
+
+NavigationMenu{
+  color: #0fcc3f;
+}
