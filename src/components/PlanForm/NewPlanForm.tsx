@@ -14,8 +14,7 @@ const NewPlanForm = () => {
   }
 
   return (
-    <form ref={formRef} action={action} className="max-w-md mx-auto p-6 bg-white border border-gray-200 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-extrabold mb-6 text-gray-800">Start a New Plan</h2>
+    <form ref={formRef} action={action} className="max-w-md mx-auto p-6">
       <div className="mb-4">
         <label htmlFor="name" className="block text-sm font-medium text-gray-600">Plan Name</label>
         <input type="text" name="name" className="block w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-2 focus:ring-[#17B890] transition duration-150 ease-in-out" />
