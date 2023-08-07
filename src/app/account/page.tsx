@@ -8,7 +8,7 @@ import getEmail from '@/src/lib/getEmail';
 export default withPageAuthRequired(async function Account() {
     const session = await getSession();
     return (
-        <div className="min-h-screen bg-gray-50 px-4 py-16">
+        <div className="min-h-screen bg-opacity-20 bg-[#CEEAE7] px-4 py-16">
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div className="bg-white rounded-lg shadow-lg p-10">
                     <div className="text-center">
