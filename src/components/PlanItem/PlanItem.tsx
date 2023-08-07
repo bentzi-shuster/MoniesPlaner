@@ -12,7 +12,7 @@ type PlanItemProps = {
     onClick: () => void
 }
 const PlanItem = ({ plan, onClick }: PlanItemProps) => {
-    console.log(plan);
+    // console.log(plan);
     const [showOverlay, setShowOverlay] = useState(true);
 
     // local state for showing/hiding the overlay
