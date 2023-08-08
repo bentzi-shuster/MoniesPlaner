@@ -4,6 +4,7 @@ import Image from 'next/image';
 import * as Tabs from '@radix-ui/react-tabs';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import * as Accordion from '@radix-ui/react-accordion';
+import getPlanCost from '@/src/lib/getPlanCost';
 
 
 
@@ -136,7 +137,7 @@ return (
         {/* income */}
     <h1>Your Income is ${plan?.income}</h1>
     {/*@ts-ignore*/}    
-    you spend ${[plan?.entertainment ,plan?.groceries,plan?.personal_care,plan?.property_tax,plan?.utilities,plan?.rent].reduce((a, b) => isNaN(parseInt(a)) ? parseInt(b) : parseInt(a) + parseInt(b), 0)} on expenses every month
+    you spend ${getPlanCost(plan)} on expenses every month
     
     </Tabs.Content>
   </Tabs.Root>
