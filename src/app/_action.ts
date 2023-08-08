@@ -33,7 +33,7 @@ if(!sub){
 //         } else if (property_tax){
 //             return `next to a realistic house that has a property tax of ${property_tax} a year`
 //         } else {
-//             return `that I live in because I can't afford anything else`
+//             return `what I live in because I can't afford anything else`
 //         }
 //     }
 //     let prompt = `Make a realistic car in the driveway, the car is a  ${car_make} ${car_model} and its ${restOfPromp()}`
