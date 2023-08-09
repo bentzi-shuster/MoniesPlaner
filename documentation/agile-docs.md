@@ -565,45 +565,47 @@ Given the AI-powered image generation is implemented on the website:
 
 ---
 
-## User Story 1: Role and Permission Management
+## User Story 1: Authentication and Authorization
 
-**Objective**: As an administrator, I want to manage user roles and permissions to control data access and protect sensitive information.
+**Objective**: As an administrator, I want to manage user permissions to control data access and protect sensitive information.
 
-**Story**: As an administrator, I want the ability to create new user roles with specific sets of permissions. I should also be able to modify existing roles or remove them if no longer needed. This will ensure that the right users have the necessary access levels.
+**Story**: As an administrator, I want the ability to lockdown pages behind login. This will ensure that the right users have the necessary access levels.
 
 ### Acceptance Criteria:
 
-1. The RBAC system provides an intuitive interface for administrators to create, edit, and delete user roles.
-2. Each role can be assigned a set of predefined or custom permissions that determine the actions users can perform.
-3. Administrators can assign roles to users individually or in bulk.
+1. Pages that users should not be able to access without logging in are locked down.
+2. Pages that use user-specific data are locked down.
+3. Users receive a login prompt when attempting to access locked pages not yet authenticated.
+
 
 ---
 
-## User Story 2: Authentication and Authorization
+## User Story 2: Manage users
 
-**Objective**: As a user, I want a secure and seamless authentication process that grants me access based on my assigned role.
+**Objective**: As a data administrator, I want to have management capabilities for users and their permissions so that I can control access to sensitive data.
 
-**Story**: As a user, I expect a user-friendly login process that verifies my identity and grants me access to the system based on my assigned role. Unauthorized access attempts should be blocked.
-
+**Story**: As a data administrator, I want to be able to add, edit, and delete users. This will allow me to control who has access to sensitive data. I also want to be able to view a list of all users and their data.
 ### Acceptance Criteria:
 
-1. The authentication process validates user credentials against the stored database of authorized users.
-2. Users receive appropriate error messages for failed login attempts (e.g., incorrect password, non-existent user).
-3. Upon successful login, users are redirected to specific pages based on their assigned roles and permissions.
+1. The system allows administrators to add new users.
+2. The system allows administrators to edit user information.
+3. The system allows administrators to delete users.
+4. The system allows administrators to view a list of all users and their data.
 
----
+--- 
 
-## User Story 3: Granular Access Control
+## User Story 3: oAuth
 
-**Objective**: As a data administrator, I want to control access to sensitive data at a granular level for different user roles.
+**Objective**: As a user, I want to be able to log in using my Google or Github account so that I don't have to create a new account.
 
-**Story**: As a data administrator, I want to define and manage access to specific data resources for different user roles. Some data may be sensitive and should only be accessible to users with the appropriate permissions.
-
+**Story**: As a user, I want to be able to log in using my Google or Github account. This will allow me to access the system without having to create a new account.
 ### Acceptance Criteria:
 
-1. The RBAC system allows administrators to specify which data resources are accessible to each user role.
-2. Unauthorized users attempting to access restricted data are denied and redirected to appropriate pages.
-3. Data access restrictions should be enforced across different areas of the system, including database queries and API requests.
+1. The system allows users to log in using their Google or Github account.
+2. There is a button on the login page that allows users to log in using their Google or Github account.
+3. Users do not have to create a new account to log in using their Google or Github account.
+4. Email addresses and names are automatically populated from the user's Google or Github account.
+5. Users are redirected to the appropriate page after logging in.
 
 ---
 # Epic: AI-Powered Plan Image Creation Using Stable Diffusion
