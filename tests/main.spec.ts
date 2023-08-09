@@ -11,8 +11,10 @@ test(`Test ${pages[i].name} page has title ${pages[i].title}`, async ({ page }) 
 }
 
 test('status code is 200', async ({ page }) => {
-  await page.goto('/');
-  const status = await page.evaluate(() => fetch('/').then((res) => res.status));
+  await page.goto('/plans');
+  //expect url to be localhost:3000/plans
+  expect(page.url()).toBe('http://localhost:3000/plans');
+  const status = await page.evaluate(() => fetch('/plans').then((res) => res.status));
   expect(status).toBe(200);
 });
 
