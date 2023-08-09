@@ -20,7 +20,7 @@ export async function getPlanTitles(){
     }
 }
 
-export async function createPlan(title:string,sub:string){
+export async function createPlan(title:string,sub:string,display_name:string){
     try{
         const plan = await prisma.plan.create({data:{
             title, 
@@ -35,6 +35,7 @@ export async function createPlan(title:string,sub:string){
             personal_care:100,
             income:100,
             user_sub:sub,
+            display_name:display_name,
             visibility:true}})
         return {plan}
     } catch (error) {

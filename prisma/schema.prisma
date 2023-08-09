@@ -28,6 +28,7 @@ model plan {
   personal_care        Float
   income              Float
   user_sub             String   // User's unique identifier from Auth0 (`sub`)
+  display_name        String @default("No Name")   // User's display name for the plan
   car_make             String?  // Optional field for car make
   car_model            String?  // Optional field for car model
   visibility          Boolean   // 'public' or 'private' for plan visibility

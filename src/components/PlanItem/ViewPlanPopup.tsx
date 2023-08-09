@@ -66,7 +66,7 @@ return (
             >{plan?.title}</h3>
             <div className="user flex gap-2 flex-row items-end mt-2">
             <Image src="https://picsum.photos/50/50" alt="User Image" width="50" height="50" className="rounded-full w-5" />
-             <p className="text-xs my-auto"><strong>Made by: </strong>{plan?.user_sub}</p>
+             <p className="text-xs my-auto"><strong>Made by: </strong>{plan?.display_name}</p>
             </div>       
         </div>
     <p className="text-xs"
