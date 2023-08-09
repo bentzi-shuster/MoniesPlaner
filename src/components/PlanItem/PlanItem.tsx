@@ -59,7 +59,7 @@ const PlanItem = ({ plan, onClick }: PlanItemProps) => {
                     {/* the avatar and username */}
                     <div className={` w-6 h-6 overflow-hidden bg-gray-300 rounded-full transition-opacity duration-300 border-[1.5px] border-black`}>
                         <Image src="/assets/images/avatars/c.png" alt="avatar" width={24} height={24} className="object-cover w-full h-full min-w-[24px] min-h-[24px]" /> {/* placeholder avatar */}
-                        <p className="font-medium">User{plan.user_sub}</p> {/* placeholder username */}
+                        <p className="font-medium">{plan.display_name}</p> {/* username */}
                     </div>
                     </div>
 
