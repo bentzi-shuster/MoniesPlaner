@@ -1,9 +1,10 @@
 import PlanGrid from "@/src/components/PlanItem/PlanGrid"
 import { getPlans } from "@/src/lib/plans";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { plan } from "@prisma/client";
 import Link from "next/link";
 
-export default async function AllPlans() {
+export default withPageAuthRequired(async function AllPlans() {
     // const session = await getSession();
     const { plans } = await getPlans()
     return (
@@ -32,4 +33,4 @@ export default async function AllPlans() {
         </div>
 
     )
-}
+}, { returnTo: '/allplans' });
