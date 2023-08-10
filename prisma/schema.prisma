@@ -3,6 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  binaryTargets = ["rhel-openssl-1.0.x","debian-openssl-1.1.x"]
 }
 
 datasource db {
@@ -11,9 +12,35 @@ datasource db {
 }
 
 // the User table is used to store the user's email and username from the auth provider
-model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+
+model plan {
+  id                  Int      @id @default(autoincrement())
+  title               String
+  rent                Float
+  groceries           Float
+  utilities           Float
+  transportation      Float
+  entertainment       Float
+  property_tax         Float?
+  insurance           Float
+  vehicle_payment      Float
+  vehicle_insurance    Float
+  personal_care        Float
+  income              Float
+  user_sub             String   // User's unique identifier from Auth0 (`sub`)
+  display_name        String @default("No Name")   // User's display name for the plan
+  car_make             String?  // Optional field for car make
+  car_model            String?  // Optional field for car model
+  visibility          Boolean   // 'public' or 'private' for plan visibility
+  created_at           DateTime @default(now())
+  modified_at          DateTime?
 }
+
+model cached_data {
+  id              Int      @id @default(autoincrement())
+  url             String   @unique
+  data            Json     // Store the scraped data as JSON
+  created_at           DateTime @default(now())
+  modified_at          DateTime?
+}
+

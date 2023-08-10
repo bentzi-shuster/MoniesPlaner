@@ -9,13 +9,24 @@ import Link from 'next/link';
       CheckIcon,
       ChevronRightIcon,
     } from '@radix-ui/react-icons';
-const NavMenuMobile = ({navs, isLoggedIn}) => {
+
+type NavMenuProps = {
+  navs: {
+    Name: string,
+    Link: string,
+    Auth: boolean | null,
+    Description: string
+  }[],
+  isLoggedIn: boolean
+}
+
+const NavMenuMobile: React.FC<NavMenuProps> = ({ navs, isLoggedIn }) => {
     
       return (
         <DropdownMenu.Root >
           <DropdownMenu.Trigger asChild>
             <button
-              className="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-emerald-800 bg-white outline-none hover:bg-green-50 focus:shadow-[0_0_0_2px] focus:shadow-black"
+              className="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-emerald-800 bg-transparent outline-none hover:bg-green-50 focus:shadow-[0_0_0_2px] focus:shadow-black"
               aria-label="Open Menu"
             >
               <HamburgerMenuIcon />
