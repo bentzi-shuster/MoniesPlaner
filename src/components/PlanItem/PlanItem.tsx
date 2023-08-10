@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { OpenInNewWindowIcon } from '@radix-ui/react-icons';
 import { useCallback } from 'react';
-import getPlanCost from "@/src/lib/getPlanCost";
+import getPlanCost from "../../../src/lib/getPlanCost";
 
 type PlanItemProps = {
     plan: plan

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import * as Tabs from '@radix-ui/react-tabs';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import * as Accordion from '@radix-ui/react-accordion';
-import getPlanCost from '@/src/lib/getPlanCost';
+import getPlanCost from '../../../src/lib/getPlanCost';
 
 
 
