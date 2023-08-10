@@ -43,3 +43,5 @@ postgresql/pg_data/
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+monies-project/node_modules
