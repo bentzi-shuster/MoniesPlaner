@@ -30,7 +30,7 @@ const PlanItem = ({ plan, onClick }: PlanItemProps) => {
         return (
             // Main Card Container
             <div
-                className={`relative w-full rounded-lg h-[308px] overflow-hidden duration-200 transition-transform cursor-pointer ${showOverlay ? '' : 'scale-105 shadow-[-5px_5px_15px_0px_rgb(0,0,0,0.2)]'
+                className={` relative w-full rounded-lg h-[308px] overflow-hidden duration-200 transition-transform cursor-pointer ${showOverlay ? '' : 'scale-105 shadow-[-5px_5px_15px_0px_rgb(0,0,0,0.2)]'
             } `}
                 onClick={onClick}
                 onMouseEnter={handleMouseEnter}
@@ -39,13 +39,13 @@ const PlanItem = ({ plan, onClick }: PlanItemProps) => {
                 {/* Main Card Background Image */}
                 <Image src="https://cdn.discordapp.com/attachments/1126624768704118834/1137866664327782571/47920001.png" alt={plan?.title} layout="fill" objectFit="cover" objectPosition="center" />
                 {/* Overlay Wrapper */}
-                <div className="w-full absolute bottom-0 left-0 right-0 min-h-[50%] flex items-center">
+                <div className="plancard w-full absolute bottom-0 left-0 right-0 min-h-[50%] flex items-center">
 
                 
                 {/* Overlay */}
                 <div
-                    className={`border-2 border-stone-200 m-2 p-2 h-full 
-                    max-w-[calc(100%-1rem)] flex-1 bg-[rgba(249,250,251,0.8)] backdrop-blur-[5px] rounded-lg transition-transform shadow-2xl duration-[400ms] ${showOverlay ? 'pointer-events-auto' : 'translate-y-[133%] '
+                    className={`border-2 border-stone-200 m-2 p-2 h-full overlay
+                    max-w-[calc(100%-1rem)] flex-1 bg-[rgba(249,250,251,0.8)] backdrop-blur-[5px] rounded-lg transition-transform shadow-2xl duration-[400ms] ${showOverlay ? '' : 'translate-y-[133%] '
                         }`}
                 >
 <div className="flex justify-between items-center mb-2 flex-row ">
