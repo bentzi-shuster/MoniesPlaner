@@ -1,16 +1,8 @@
 import { test, expect } from '@playwright/experimental-ct-react';
 import PlanGrid from '../../src/components/PlanItem/PlanGrid';
-import PlanItem from '@/src/components/PlanItem/PlanItem';
-import ViewPlanPopup from '@/src/components/PlanItem/ViewPlanPopup';
-import { beforeMount, afterMount } from '@playwright/experimental-ct-react/hooks';
 // https://playwright.dev/docs/test-components  🙏🙏🙏🙏
 // https://playwright.dev/docs/test-components#q-i-cant-import-anything-other-than-the-components-from-tsxjsxcomponent-files  
 // read the above 
-test.use({ viewport: { width: 500, height: 500 } });
-export type HooksConfig = {
-  enableRouting?: boolean;
-}
-
 let PlnGrdElm = <PlanGrid plans={[{
     "id": 1,
     "title": "Test Plan",
