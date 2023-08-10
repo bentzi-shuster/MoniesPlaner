@@ -49,7 +49,7 @@ const Home = async () => {
               </p>
             </div>
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-              <hr className="w-auto h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-[#FA8334]" />
+              <hr className="w-auto h-1 mx-auto my-4 border-0 rounded md:my-10 bg-[#FA8334]" />
               <PlanGrid plans={plans as plan[]} />
             </div>
           </div>
