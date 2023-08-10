@@ -57,10 +57,14 @@ const PlanItem = ({ plan, onClick }: PlanItemProps) => {
                     </div>
 
                     {/* the avatar and username */}
-                    <div className={` w-6 h-6 overflow-hidden bg-gray-300 rounded-full transition-opacity duration-300 border-[1.5px] border-black`}>
-                        <Image src="/assets/images/avatars/c.png" alt="avatar" width={24} height={24} className="object-cover w-full h-full min-w-[24px] min-h-[24px]" /> {/* placeholder avatar */}
-                        <p className="font-medium">{plan.display_name}</p> {/* username */}
-                    </div>
+                    <div className={`w-6 h-6 overflow-hidden rounded-full transition-opacity duration-300 border-[1px] border-blackA4`}
+                    style={{
+                        background: `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`,
+                }}
+                    >
+                        {/*@ts-ignore placeholder avatar untill we have the url in the DB */}
+                        {plan.pfp_url?<Image src={plan.pfp_url} alt={plan.display_name} width={24} height={24} className="object-cover w-full h-full min-w-[24px] min-h-[24px]" />:<p className="font-semibold font-sans flex items-center text-black bg-[#ffffff69] w-full h-full justify-center leading-tight">{plan.display_name.charAt(0)}</p>}
+                    </div> 
                     </div>
 
 <div className="flex flex-row flex-wrap justify-start items-center">
