@@ -22,10 +22,9 @@ export async function getPlanTitles(){
     }
 }
 
-export async function createPlan(title: string, sub: string, display_name:string, carPrice: number, housePrice: number, car_make: string, car_model: string) {
+export async function createPlan(title: string, sub: string, display_name:string, plan_image:string,carPrice: number, housePrice: number, car_make: string, car_model: string) {
     try {
 
-        // caclulatePlan returns an array object
         const planValues = calculatePlan(carPrice, housePrice);
 
         const plan = await prisma.plan.create({
@@ -33,6 +32,7 @@ export async function createPlan(title: string, sub: string, display_name:string
                 title,
                 user_sub: sub,
                 display_name: display_name,
+                plan_image: plan_image,
                 car_payment: planValues.car_payment,
                 car_insurance: planValues.car_insurance,
                 car_expenses: planValues.car_expenses,
