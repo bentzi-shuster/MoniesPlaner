@@ -4,7 +4,7 @@ import Image from 'next/image';
 import * as Tabs from '@radix-ui/react-tabs';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import * as Accordion from '@radix-ui/react-accordion';
-import getPlanCost from '@/src/lib/getPlanCost';
+import getPlanCost from '../../../src/lib/getPlanCost';
 
 
 
@@ -45,13 +45,13 @@ return (
   return (
     <>
       {/* tailwind popup */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-50" 
+      <div className="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-50 viewplanpopupbg" 
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           onClose();
         }
         }}>
-        <div className="bg-white rounded-md lg:w-5/12 lg:h-5/6 overflow-auto w-11/12 h-5/6">
+        <div className="bg-white rounded-md lg:w-5/12 lg:h-5/6 overflow-auto w-11/12 h-5/6 viewplanpopup">
           <Image
             src="https://picsum.photos/1500/1000"
             width="1500"
@@ -99,7 +99,7 @@ return (
       </Tabs.Trigger>
     </Tabs.List>
     <Tabs.Content
-      className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
+      className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black Car"
       value="Car"
     >
       {/* car */}
@@ -115,7 +115,7 @@ return (
 
     </Tabs.Content>
     <Tabs.Content
-      className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
+      className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black Lifestyle"
       value="Lifestyle"
     >
     {/* lifestyle */}
@@ -131,7 +131,7 @@ return (
 </Accordion.Root>
     </Tabs.Content>
     <Tabs.Content
-      className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
+      className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black Income"
       value="Income"
     >
         {/* income */}
