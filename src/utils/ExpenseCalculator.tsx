@@ -80,19 +80,19 @@ export function calculatePlan(carPrice: number, housePrice: number): PlanTypes {
     const propertyTax = calculateMonthlyPropertyTax(housePrice);
     const { needs, wants, savings } = estimateMonthlyExpenses(takeHomePay);
     const plan: PlanTypes = {
-            car_payment: carPayment,
-            car_insurance: carInsurance,
-            car_expenses: carExpenses,
-            income: takeHomePay,
-            take_home_pay: takeHomePay,
-            mortgage: mortgage,
-            property_tax: propertyTax,
-            groceries: groceries,
-            entertainment: entertainment,
-            personal_care: personalCare,
-            needs: needs,
-            wants: wants,
-            savings: savings
+            car_payment: carPayment?carPayment:0,
+            car_insurance: carInsurance?carInsurance:0,
+            car_expenses: carExpenses?carExpenses:0,
+            income: takeHomePay?takeHomePay:0,
+            take_home_pay: takeHomePay?takeHomePay:0,
+            mortgage: mortgage?mortgage:0,
+            property_tax: propertyTax?propertyTax:0,
+            groceries: groceries?groceries:0,
+            entertainment: entertainment?entertainment:0,
+            personal_care: personalCare?personalCare:0,
+            needs: needs?needs:0,
+            wants: wants?wants:0,
+            savings: savings?savings:0
     }
     return plan;
 }
