@@ -54,3 +54,15 @@ export async function createPlan(title: string, sub: string, display_name:string
         return { error };
     }
 } 
+
+export async function deletePlansForUser(userSub: string): Promise<void> {
+  try {
+    await prisma.plan.updateMany({
+      where: { user_sub: userSub },
+      data: { deleted: true },
+    });
+    console.log(`Successfully marked plans as deleted for user ${userSub}`);
+  } catch (error: any) {
+    console.error(`Error marking plans as deleted: ${error}`);
+  } 
+}
