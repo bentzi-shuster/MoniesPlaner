@@ -29,7 +29,7 @@ model plan {
   needs               Float
   wants               Float
   savings             Float
-  user_sub            String @unique
+  user_sub            String
   display_name        String @default("No Name")
   car_make             String?  // Optional field for car make
   car_model            String?  // Optional field for car model
@@ -37,7 +37,7 @@ model plan {
   deleted             Boolean @default(false) // 'true' or 'false' for plan deletion status
   created_at          DateTime @default(now())
   modified_at         DateTime @updatedAt
-  user_image          String? // Optional field for user image
+  plan_image          String? // Optional field for user image
 }
 
 model cached_data {
