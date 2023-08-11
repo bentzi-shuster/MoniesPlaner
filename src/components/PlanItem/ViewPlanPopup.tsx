@@ -110,7 +110,7 @@ function makeNumberUserFriendly(num: number|null|undefined,fallback=0):string {
                 </Tabs.Trigger>
               </Tabs.List>
               <Tabs.Content
-                className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black Car"
+                className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black IncomeAndGoals"
                 value="IncomeAndGoals"
               >
                 <Accordion.Root type="multiple" className="border border-mauve6 rounded-md overflow-hidden" defaultValue={['income']}>
@@ -126,7 +126,7 @@ function makeNumberUserFriendly(num: number|null|undefined,fallback=0):string {
 
               </Tabs.Content>
               <Tabs.Content
-                className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black Lifestyle"
+                className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black Transportation"
                 value="Transportation"
               >
                 {/* lifestyle */}
@@ -142,7 +142,7 @@ function makeNumberUserFriendly(num: number|null|undefined,fallback=0):string {
                 </Accordion.Root>
               </Tabs.Content>
               <Tabs.Content
-                className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black Income"
+                className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black Lifestyle"
                 value="Lifestyle"
               >
                 {/* income */}

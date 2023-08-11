@@ -94,16 +94,16 @@ test("expect the tabs in the popup to work",async ({ mount }) => {
   let plancard = await component.locator(".plancard").first()
   await plancard.click();
   //#radix-:ri:-trigger-Car is tab 2,radix-:ri:-trigger-Income is tab 3, radix-:ri:-trigger-Lifestyle is tab 1
-  let tab2 = await component.getByText("Car").first();
+  let tab2 = await component.getByText("Lifestyle").first();
   await tab2.click();
-  let tab2Content = await component.locator(".Car").first();
+  let tab2Content = await component.locator(".Lifestyle").first();
   await expect(tab2Content).toBeVisible();
-  let tab3 = await component.locator("button:has-text('Income')").first();
+  let tab3 = await component.locator("button:has-text('Transportation')").first();
   await tab3.click();
-  let tab3Content = await component.locator(".Income").first();
+  let tab3Content = await component.locator(".Transportation").first();
   await expect(tab3Content).toBeVisible();
-  let tab1 = await component.getByText("Lifestyle").first();
+  let tab1 = await component.getByText("Income & Goals").first();
   await tab1.click();
-  let tab1Content = await component.locator(".Lifestyle").first();
+  let tab1Content = await component.locator(".IncomeAndGoals").first();
   await expect(tab1Content).toBeVisible();
 });
