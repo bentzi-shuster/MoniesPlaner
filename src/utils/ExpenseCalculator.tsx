@@ -52,7 +52,24 @@ function estimateMonthlyExpenses(income: number): { needs: number, wants: number
     return { needs, wants, savings };
 }
 
-export function calculatePlan(carPrice: number, housePrice: number): Array<object> {
+interface PlanTypes {
+    car_payment: number;
+    car_insurance: number;
+    car_expenses: number;
+    income: number;
+    take_home_pay: number;
+    mortgage: number;
+    property_tax: number;
+    groceries: number;
+    entertainment: number;
+    personal_care: number;
+    needs: number;
+    wants: number;
+    savings: number;
+}
+
+export function calculatePlan(carPrice: number, housePrice: number): PlanTypes {
+    
     const carLoanAmount = carPrice * 0.8; // 80% of car's total price
     const carLoanInterest = (carLoanAmount * (carLoanInterestRate / 100)) / 12; // Monthly car loan interest
     const carPayment = calculateMonthlyCarPayment(carLoanAmount, carLoanDurationMonths, carLoanInterest);
@@ -62,8 +79,7 @@ export function calculatePlan(carPrice: number, housePrice: number): Array<objec
     const mortgage = calculateMonthlyMortgage(housePrice);
     const propertyTax = calculateMonthlyPropertyTax(housePrice);
     const { needs, wants, savings } = estimateMonthlyExpenses(takeHomePay);
-    return [
-        {
+    const plan: PlanTypes = {
             car_payment: carPayment,
             car_insurance: carInsurance,
             car_expenses: carExpenses,
@@ -77,6 +93,6 @@ export function calculatePlan(carPrice: number, housePrice: number): Array<objec
             needs: needs,
             wants: wants,
             savings: savings
-        }
-    ];
+    }
+    return plan;
 }
