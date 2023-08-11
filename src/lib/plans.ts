@@ -1,5 +1,5 @@
 import prisma from "./prisma"
-import { calculatePlan } from "../utils/ExpenseCalculator.tsx"
+import { calculatePlan } from "../utils/ExpenseCalculator"
 
 
 export async function getPlans(){
@@ -22,7 +22,7 @@ export async function getPlanTitles(){
     }
 }
 
-export async function createPlan(title: string, sub: string, display_name:display_name, carPrice: number, housePrice: number, car_make: string, car_model: string) {
+export async function createPlan(title: string, sub: string, display_name:string, carPrice: number, housePrice: number, car_make: string, car_model: string) {
     try {
 
         // caclulatePlan returns an array object
@@ -33,19 +33,19 @@ export async function createPlan(title: string, sub: string, display_name:displa
                 title,
                 user_sub: sub,
                 display_name: display_name,
-                car_payment: planValues[0].car_payment,
-                car_insurance: planValues[0].car_insurance,
-                car_expenses: planValues[0].car_expenses,
-                income: planValues[0].income,
-                take_home_pay: planValues[0].take_home_pay,
-                mortgage: planValues[0].mortgage,
-                property_tax: planValues[0].property_tax,
-                groceries: planValues[0].groceries,
-                entertainment: planValues[0].entertainment,
-                personal_care: planValues[0].personal_care,
-                needs: planValues[0].needs,
-                wants: planValues[0].wants,
-                savings: planValues[0].savings,
+                car_payment: planValues.car_payment,
+                car_insurance: planValues.car_insurance,
+                car_expenses: planValues.car_expenses,
+                income: planValues.income,
+                take_home_pay: planValues.take_home_pay,
+                mortgage: planValues.mortgage,
+                property_tax: planValues.property_tax,
+                groceries: planValues.groceries,
+                entertainment: planValues.entertainment,
+                personal_care: planValues.personal_care,
+                needs: planValues.needs,
+                wants: planValues.wants,
+                savings: planValues.savings,
             }
         })
         return { plan }
