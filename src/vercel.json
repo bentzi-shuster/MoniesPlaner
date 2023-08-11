@@ -1,7 +1,0 @@
-{
-    "functions": {
-      "api/webScraper/route.ts": {
-        "maxDuration": 100
-      }
-    }
-  }
