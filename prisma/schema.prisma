@@ -14,26 +14,30 @@ datasource db {
 // the User table is used to store the user's email and username from the auth provider
 
 model plan {
-  id                  Int      @id @default(autoincrement())
+  id                  Int       @id @default(autoincrement())
   title               String
-  rent                Float
-  groceries           Float
-  utilities           Float
-  transportation      Float
-  entertainment       Float
-  property_tax         Float?
-  insurance           Float
-  vehicle_payment      Float
-  vehicle_insurance    Float
-  personal_care        Float
+  car_payment          Float
+  car_insurance        Float
+  car_expenses         Float
   income              Float
-  user_sub             String   // User's unique identifier from Auth0 (`sub`)
-  display_name        String @default("No Name")   // User's display name for the plan
+  take_home_pay         Float
+  mortgage            Float
+  property_tax         Float
+  groceries           Float
+  entertainment       Float
+  personal_care        Float
+  needs               Float
+  wants               Float
+  savings             Float
+  user_sub            String
+  display_name        String @default("No Name")
   car_make             String?  // Optional field for car make
   car_model            String?  // Optional field for car model
-  visibility          Boolean   // 'public' or 'private' for plan visibility
-  created_at           DateTime @default(now())
-  modified_at          DateTime?
+  published           Boolean @default(true) // 'true' or 'false' for plan publish status
+  deleted             Boolean @default(false) // 'true' or 'false' for plan deletion status
+  created_at          DateTime @default(now())
+  modified_at         DateTime @updatedAt
+  plan_image          String? // Optional field for user image
 }
 
 model cached_data {

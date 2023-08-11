@@ -35,15 +35,15 @@ const Footer: React.FC = () => {
   return (
     <footer className="mt-10  bottom-0 w-full z-50">
       {/* Boxed Footer Content */}
-      <div className="max-w-8xl mx-auto px-6 py-10 bg-[#1A202C] text-center text-neutral-600 dark:bg-[#1A202C] dark:text-white lg:text-left">
-        <div className="flex items-center justify-center border-b-2 border-white p-6 dark:border-[#FA8334] lg:justify-between">
+      <div className="max-w-8xl mx-auto px-6 py-10 bg-[#1A202C] text-center text-white lg:text-left">
+        <div className="flex items-center justify-center border-b-2 p-6 border-[#FA8334] lg:justify-between">
           {/* Left Logo */}
           <div className="mr-12 hidden lg:block">
             Share on social media:
           </div>
           <div className="flex justify-center">
             {socialNetworks.map((network, index) => (
-              <Link key={index} href={network.url} aria-label={network.label} className="mr-6 text-neutral-600 dark:text-white">
+              <Link key={index} href={network.url} aria-label={network.label} className="mr-6 text-white">
                 {network.icon}
               </Link>
             ))}
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
               </h6>
               {companyLinks.map((link, index) => (
                 <p key={index} className="mb-4">
-                  <Link href={link.url} className="text-neutral-600 dark:text-white">
+                  <Link href={link.url} className="text-white">
                     {link.label}
                   </Link>
                 </p>
@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
               </h6>
               {legalLinks.map((link, index) => (
                 <p key={index} className="mb-4">
-                  <Link href={link.url} className="text-neutral-600 dark:text-white">
+                  <Link href={link.url} className="text-white">
                     {link.label}
                   </Link>
                 </p>
@@ -107,9 +107,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
         {/* Footer Bottom */}
-        <div className="bg-[#1A202C] p-6 text-center dark:bg-[#1A202C] rounded-b-lg">
+        <div className="bg-[#1A202C] p-6 text-center rounded-b-lg">
           <span>© {new Date().getFullYear()} Copyright:</span>
-          <Link href="/" className="font-semibold text-neutral-600 dark:text-[#17B890]">
+          <Link href="/" className="font-semibold  text-[#17B890]">
             MonniesPlanner
           </Link>
         </div>

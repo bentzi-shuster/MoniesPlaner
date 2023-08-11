@@ -20,8 +20,8 @@ const CookieModal: React.FC = () => {
   return (
     <AlertDialog.Root open={isOpen}>
       <AlertDialog.Portal container={typeof window !== 'undefined' ? document.body : undefined}>
-        <AlertDialog.Overlay className="bg-blackA9 data-[state=open]:animate-overlayShow fixed inset-0" />
-        <AlertDialog.Content className=" w-96 2xl:w-1/5 pr-4 pl-4 pt-8 pb-8 fixed top-[50%] left-[50%] bg-white rounded-lg shadow-lg transform translate-x-[-50%] translate-y-[-50%]">
+        <AlertDialog.Overlay className="bg-blackA9 data-[state=open]:animate-overlayShow fixed inset-0 z-50" />
+        <AlertDialog.Content className=" w-96 2xl:w-1/5 pr-4 pl-4 pt-8 pb-8 fixed top-[50%] left-[50%] z-[60] bg-white rounded-lg shadow-lg transform translate-x-[-50%] translate-y-[-50%]">
           <AlertDialog.Title className="text-xl font-semibold mb-4">
             We value your privacy
           </AlertDialog.Title>

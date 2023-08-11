@@ -1,4 +1,6 @@
 import prisma from "./prisma"
+import { calculatePlan } from "../utils/ExpenseCalculator"
+
 
 export async function getPlans(){
    
@@ -20,26 +22,47 @@ export async function getPlanTitles(){
     }
 }
 
-export async function createPlan(title:string,sub:string,display_name:string){
-    try{
-        const plan = await prisma.plan.create({data:{
-            title, 
-            rent:100,
-            groceries:100,
-            utilities:100,
-            transportation:100,
-            entertainment:100,
-            insurance:100,
-            vehicle_payment:100,
-            vehicle_insurance:100,
-            personal_care:100,
-            income:100,
-            user_sub:sub,
-            display_name:display_name,
-            visibility:true}})
-        return {plan}
+export async function createPlan(title: string, sub: string, display_name:string, plan_image:string,carPrice: number, housePrice: number, car_make: string, car_model: string) {
+    try {
+
+        const planValues = calculatePlan(carPrice, housePrice);
+
+        const plan = await prisma.plan.create({
+            data: {
+                title,
+                user_sub: sub,
+                display_name: display_name,
+                plan_image: plan_image,
+                car_payment: planValues.car_payment,
+                car_insurance: planValues.car_insurance,
+                car_expenses: planValues.car_expenses,
+                income: planValues.income,
+                take_home_pay: planValues.take_home_pay,
+                mortgage: planValues.mortgage,
+                property_tax: planValues.property_tax,
+                groceries: planValues.groceries,
+                entertainment: planValues.entertainment,
+                personal_care: planValues.personal_care,
+                needs: planValues.needs,
+                wants: planValues.wants,
+                savings: planValues.savings,
+            }
+        })
+        return { plan }
     } catch (error) {
         console.error(error);
-        return {error};
+        return { error };
     }
 } 
+
+export async function deletePlansForUser(userSub: string): Promise<void> {
+  try {
+    await prisma.plan.updateMany({
+      where: { user_sub: userSub },
+      data: { deleted: true },
+    });
+    console.log(`Successfully marked plans as deleted for user ${userSub}`);
+  } catch (error: any) {
+    console.error(`Error marking plans as deleted: ${error}`);
+  } 
+}

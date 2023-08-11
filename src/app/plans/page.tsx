@@ -42,7 +42,7 @@ export default withPageAuthRequired(async function Account() {
             <div className="text-center mb-8">
               <h2 className=" mt-4 text-base text-[#17B890] font-semibold tracking-wide uppercase">My Existing Plans</h2>
               <p className="mt-2 text-lg text-gray-600">All your plans in one place, easy to view and manage.</p>
-              <hr className="w-auto h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-[#FA8334]" />
+              <hr className="w-auto h-1 mx-auto my-4 border-0 rounded md:my-10 bg-[#FA8334]" />
             </div>
             <PlanGrid plans={plans as plan[]}  user={sub}/>
           </div>
