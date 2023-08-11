@@ -65,9 +65,18 @@ return (
             <h3 className="text-xl font-bold"
             >{plan?.title}</h3>
             <div className="user flex gap-2 flex-row items-end mt-2">
-            <Image src="https://picsum.photos/50/50" alt="User Image" width="50" height="50" className="rounded-full w-5" />
-             <p className="text-xs my-auto"><strong>Made by: </strong>{plan?.display_name}</p>
-            </div>       
+              {/*@ts-ignore <-- his is needed until we update the db schema*/}
+            {/* <Image src={(plan&&plan.pfp_url)?plan?.pfp_url:"https://picsum.photos/50/50"} alt={`Made by ${(plan&&plan.display_name)?plan?.display_name:"Unknown"}`} width="50" height="50" className="rounded-full w-5" /> */}
+               {/* the avatar and username */}
+               <div className={`w-6 h-6 overflow-hidden rounded-full transition-opacity duration-300 border-[1px] border-blackA4`}
+                    style={{
+                        background: `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`,
+                }}
+                    >
+            {/*@ts-ignore <-- his is needed until we update the db schema*/}
+            {plan.pfp_url?<Image src={plan.pfp_url} alt={plan.display_name} width={24} height={24} className="object-cover w-full h-full min-w-[24px] min-h-[24px]" />:<p className="font-semibold font-sans flex items-center text-black bg-[#ffffff69] w-full h-full justify-center leading-tight">{plan.display_name.charAt(0)}</p>}
+           </div><p className="text-xs my-auto"><strong>Made by: </strong>{plan?.display_name}</p> 
+            </div>        
         </div>
     <p className="text-xs"
     >{plan?.created_at.toLocaleString('en-US', { month: 'short' })} {plan?.created_at.getFullYear()}</p>
