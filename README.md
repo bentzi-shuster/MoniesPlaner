@@ -18,6 +18,11 @@
 </h1>
 <br>
 
+## [Prod Link ](https://monies-planer.vercel.app/)  
+## [Video Demo](#)  
+## [Figma Design](https://www.figma.com/file/KZBE7ar11kIe3EmH7jZ5ae/Mockup?type=design&node-id=0%3A1&mode=design&t=dqv1JDuL5e370aB9-1)  
+
+
 **MoniesPlaner** is a responsive web application that allows users to manage their finances effectively by providing an interactive feedback form to capture financial data securely. This project is built using Tailwind CSS and Next.js, providing a user-friendly interface with efficient performance.
 
 ## Key Features

@@ -25,10 +25,12 @@ function fetcher(url: string, baseURL: string) {
 export async function createPlanAction(name: string, car: string, house: string, baseURL: string) {
   let session: Session | null | undefined = await getSession()
   if (!session) {
+    console.log("no session")
     return
   }
   let sub: string | null = getSub(session)
   if (!sub) {
+    console.log("no sub")
     return
   }
   let accountName: string | null = getName(session)
@@ -49,19 +51,25 @@ export async function createPlanAction(name: string, car: string, house: string,
   console.log(housedata, cardata)
   let carPrice = 0 as  string|number
   let housePrice = 0 as  string|number
+  let carMake = ""
+  let carModel = ""
+  let houseName = ""
+  let carName = ""
   try {
-     carPrice = JSON.parse(cardata["data"])[0] as  string
+     carPrice = JSON.parse(cardata["data"])["max_dollar"] as  string
      housePrice = JSON.parse(housedata["data"])[0] as string
     carPrice = parseInt(carPrice.replace(/[^\d]/g, '').replace(/,/g, '').replace(/\$/g, ''))
     housePrice = parseInt(housePrice.replace(/[^\d]/g, '').replace(/,/g, '').replace(/\$/g, ''))
     console.log(carPrice, housePrice)
+    
+  carName = JSON.parse(cardata["data"])["product_title"] as string
+  houseName = JSON.parse(housedata["data"])["product_title"] as string
+  carMake = carName.split(" ")[0]
+  carModel = carName.split(" ")[1]
   } catch (e) {
     console.log(e)
   }
-  let carName = cardata?.data[1]
-  let houseName = housedata?.data[1]
-  let carMake = carName.split(" ")[0]
-  let carModel = carName.split(" ")[1]
+
   await createPlan(name, sub,accountName,plan_image,carPrice as number, housePrice as number,carMake,carModel)
   // revalidatePath('/')
 }

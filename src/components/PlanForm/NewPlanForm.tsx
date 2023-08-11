@@ -11,12 +11,7 @@ const NewPlanForm = () => {
     const car = data.get('car');
     const house = data.get('house');
     if (!car || typeof car !== 'string' || !house || typeof house !== 'string') return;
-    let urlregex = new RegExp('^(https?:\\/\\/)?'+ // protocol
-      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-      '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-      '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+    let urlregex = new RegExp('^(http:\/\/www.|https:\/\/www.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}');
     if (!urlregex.test(car) || !urlregex.test(house)) return;
     formRef.current?.reset();
     await createPlanAction(name, car, house,window.location.host);
