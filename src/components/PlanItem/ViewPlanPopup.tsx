@@ -8,9 +8,9 @@ import getPlanCost from '../../../src/lib/getPlanCost';
 
 const ViewPlanPopup = ({ plan, onClose }: { plan: plan | null, onClose: () => void }) => {
 
-
-
-
+function makeNumberUserFriendly(num: number|null|undefined,fallback=0):string {
+  return num ? "$"+Math.floor(num):fallback as unknown as string;
+}
 
   function makeAccordionItem(title: string, childrenArr:ReactNode[] ,id: string) {
 
@@ -87,72 +87,80 @@ const ViewPlanPopup = ({ plan, onClose }: { plan: plan | null, onClose: () => vo
             </div>
             <Tabs.Root
               className="flex flex-col shadow-[0_2px_10px] shadow-blackA4 w-full"
-              defaultValue="Lifestyle"
+              defaultValue="IncomeAndGoals"
             >
-              <Tabs.List className="shrink-0 flex border-b border-mauve6" aria-label="Manage your account">
+              <Tabs.List className="shrink-0 flex border-b border-mauve6" aria-label="Tabs">
+                <Tabs.Trigger
+                  className="bg-white px-5 h-[45px] flex-1 flex items-center justify-center text-[15px] leading-none text-green-500 select-none first:rounded-tl-md last:rounded-tr-md hover:text-green-700 data-[state=active]:text-green-700 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] cursor-default"
+                  value="IncomeAndGoals"
+                >
+                  Income & Goals
+                </Tabs.Trigger>
+                <Tabs.Trigger
+                  className="bg-white px-5 h-[45px] flex-1 flex items-center justify-center text-[15px] leading-none text-green-500 select-none first:rounded-tl-md last:rounded-tr-md hover:text-green-700 data-[state=active]:text-green-700 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] cursor-default"
+                  value="Transportation"
+                >
+                  Transportation
+                </Tabs.Trigger>
                 <Tabs.Trigger
                   className="bg-white px-5 h-[45px] flex-1 flex items-center justify-center text-[15px] leading-none text-green-500 select-none first:rounded-tl-md last:rounded-tr-md hover:text-green-700 data-[state=active]:text-green-700 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] cursor-default"
                   value="Lifestyle"
                 >
                   Lifestyle
                 </Tabs.Trigger>
-                <Tabs.Trigger
-                  className="bg-white px-5 h-[45px] flex-1 flex items-center justify-center text-[15px] leading-none text-green-500 select-none first:rounded-tl-md last:rounded-tr-md hover:text-green-700 data-[state=active]:text-green-700 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] cursor-default"
-                  value="Car"
-                >
-                  Car
-                </Tabs.Trigger>
-                <Tabs.Trigger
-                  className="bg-white px-5 h-[45px] flex-1 flex items-center justify-center text-[15px] leading-none text-green-500 select-none first:rounded-tl-md last:rounded-tr-md hover:text-green-700 data-[state=active]:text-green-700 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] cursor-default"
-                  value="Income"
-                >
-                  Income
-                </Tabs.Trigger>
               </Tabs.List>
               <Tabs.Content
                 className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black Car"
-                value="Car"
+                value="IncomeAndGoals"
               >
-                {/* car */}
+                <Accordion.Root type="multiple" className="border border-mauve6 rounded-md overflow-hidden" defaultValue={['income']}>
 
-                <Accordion.Root type="multiple" className="border border-mauve6 rounded-md overflow-hidden" defaultValue={['car', "transportation"]}>
-                  {/* better grouping */}
-                  {/* car type */}
-
-                  {makeAccordionItem("Car Type", [<p key={"1"}>You have a {plan?.car_make + " " + plan?.car_model}</p>], "car")}
-                  {/* car costs */}
-                  {makeAccordionItem("Transportation Costs", [<p key={"1"}>You spend ${plan?.transportation} on transportation every month</p>, <p key={"2"}>You need to pay ${plan?.vehicle_payment} for your {plan?.car_make + " " + plan?.car_model} every month</p>, <p key={"3"}>Your {plan?.car_make + " " + plan?.car_model} is insured with ${plan?.vehicle_insurance} coverage</p>], "transportation")}
-
+{makeAccordionItem("Income and Goals",[
+<p key={"1"}>Income: {makeNumberUserFriendly(plan?.income,0)}</p>,
+<p key={"2"}>Needs Allocation: {makeNumberUserFriendly(plan?.needs,0)}</p>,
+<p key={"3"}>Wants Allocation: {makeNumberUserFriendly(plan?.wants,0)}</p>,
+<p key={"4"}>Savings Allocation: {makeNumberUserFriendly(plan?.savings,0)}</p>
+],"income")}
                 </Accordion.Root>
 
 
               </Tabs.Content>
               <Tabs.Content
                 className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black Lifestyle"
-                value="Lifestyle"
+                value="Transportation"
               >
                 {/* lifestyle */}
-                <Accordion.Root type="multiple" className="border border-mauve6 rounded-md overflow-hidden" defaultValue={["insurance", "personal", "property"]}>
-                  {/* better grouping */}
-                  {/* group 1 */}
-                  {makeAccordionItem("Personal Care", [<p key={"1"} >You spend ${plan?.entertainment} on entertainment every month</p>, <p key={"2"}>You spend ${plan?.groceries} on groceries every month</p>, <p key={"3"}>You spend ${plan?.personal_care} on personal care every month</p>], "personal")}
-                  {/* group 2 */}
-                  {makeAccordionItem("Property", [<p key={"1"} >You spend ${plan?.property_tax} on property tax every month</p>, <p key={"2"}>You spend ${plan?.utilities} on utilities every month</p>, <p key={"3"}>You spend ${plan?.rent} on rent every month</p>], "property")}
-                  {/* group 3 */}
-                  {makeAccordionItem("Insurance", [<p key={"1"} >You spend ${plan?.insurance} on insurance every month</p>], "insurance")}
+                <Accordion.Root type="multiple" className="border border-mauve6 rounded-md overflow-hidden" defaultValue={["transportation"]}>
+               
+                {makeAccordionItem("Transportation",[
+<p key={"1"}>Car Type: {(plan?.car_model&&plan?.car_make)?plan?.car_model+" "+plan?.car_make:"Unknown"}</p>,
+<p key={"2"}>Car Payment: {makeNumberUserFriendly(plan?.car_payment,0)}</p>,
+<p key={"3"}>Car Insurance: {makeNumberUserFriendly(plan?.car_insurance,0)}</p>,
+<p key={"4"}>Car Expenses: {makeNumberUserFriendly(plan?.car_expenses,0)}</p>,
+],"transportation")}
 
                 </Accordion.Root>
               </Tabs.Content>
               <Tabs.Content
                 className="grow p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black Income"
-                value="Income"
+                value="Lifestyle"
               >
                 {/* income */}
                 {/* <h1>Your Income is ${plan?.income}</h1> */}
                 {/*@ts-ignore*/}
                 {/* you spend ${getPlanCost(plan)} on expenses every month */}
-                <Accordion.Root type="multiple" className="border border-mauve6 rounded-md overflow-hidden" defaultValue={["income"]}>
-                  {makeAccordionItem("Income", [<p key={"1"} >You make ${plan?.income} a year</p>, <p key={"2"} >You make ${Math.floor(plan?.income as number / 12)} a month</p>, <p key={"3"} >You spend ${getPlanCost(plan as plan)} on expenses every month</p>], "income")}
+                <Accordion.Root type="multiple" className="border border-mauve6 rounded-md overflow-hidden" defaultValue={["lifestyle"]}>
+
+                {makeAccordionItem("Lifestyle",[
+<p key={"1"}>Take-Home Pay: {makeNumberUserFriendly(plan?.take_home_pay,0)}</p>,
+<p key={"2"}>Monthly Mortgage: {makeNumberUserFriendly(plan?.mortgage,0)}</p>,
+<p key={"3"}>Property Tax: {makeNumberUserFriendly(plan?.property_tax,0)}</p>,
+<p key={"4"}>Groceries Budget: {makeNumberUserFriendly(plan?.groceries,0)}</p>,
+<p key={"5"}>Entertainment Budget: {makeNumberUserFriendly(plan?.entertainment,0)}</p>,
+<p key={"6"}>Personal Care Budget: {makeNumberUserFriendly(plan?.personal_care,0)}</p>,
+],"lifestyle")}
+
+
                 </Accordion.Root>
 
 

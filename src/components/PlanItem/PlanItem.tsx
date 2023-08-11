@@ -69,7 +69,7 @@ const PlanItem = ({ plan, onClick }: PlanItemProps) => {
 
 <div className="flex flex-row flex-wrap justify-start items-center">
      <p className={`text-xs transition-opacity duration-300 bg-[#FA8334] w-fit m-2 py-1 px-2 rounded-full text-white font-semibold shadow-inner `}>Cost: ${getPlanCost(plan)} </p>
-                    <p className={`text-xs transition-opacity duration-300 bg-[#73ceb4] w-fit m-2 py-1 px-2 rounded-full text-black font-semibold shadow-inner ${showOverlay ? 'opacity-100' : 'opacity-0'}`}>Income: ${plan.income} </p>
+                    <p className={`text-xs transition-opacity duration-300 bg-[#73ceb4] w-fit m-2 py-1 px-2 rounded-full text-black font-semibold shadow-inner ${showOverlay ? 'opacity-100' : 'opacity-0'}`}>Income: ${Math.floor(plan.income?plan.income:0)}</p>
 
 </div>
                    
