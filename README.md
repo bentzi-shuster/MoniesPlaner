@@ -19,7 +19,7 @@
 <br>
 
 ## [Prod Link ](https://monies-planer.vercel.app/)  
-## [Video Demo](#)  
+## [Video Demo](https://youtu.be/x_KpTxnDyFQ)  
 ## [Figma Design](https://www.figma.com/file/KZBE7ar11kIe3EmH7jZ5ae/Mockup?type=design&node-id=0%3A1&mode=design&t=dqv1JDuL5e370aB9-1)  
 
 
