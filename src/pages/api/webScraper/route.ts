@@ -1,3 +1,4 @@
+// https://github.com/vercel/next.js/issues/46337#issuecomment-1478613133
 export const runtime = 'edge'; // vercel serverless functions timeout after 10 seconds, so lets see if edge works?????
 import { NextResponse, NextRequest } from 'next/server';
 
