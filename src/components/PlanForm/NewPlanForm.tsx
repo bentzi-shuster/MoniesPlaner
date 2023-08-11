@@ -8,10 +8,21 @@ const NewPlanForm = () => {
   async function action(data: FormData) {
     const name = data.get('name');
     if (!name || typeof name !== 'string') return;
+    const car = data.get('car');
+    const house = data.get('house');
+    if (!car || typeof car !== 'string' || !house || typeof house !== 'string') return;
+    let urlregex = new RegExp('^(https?:\\/\\/)?'+ // protocol
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+      '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+      '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+      '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+    if (!urlregex.test(car) || !urlregex.test(house)) return;
     formRef.current?.reset();
-    await createPlanAction(name);
+    await createPlanAction(name, car, house,window.location.host);
     
   }
+
 
   return (
     <form ref={formRef} action={action} className="max-w-md mx-auto p-6">
