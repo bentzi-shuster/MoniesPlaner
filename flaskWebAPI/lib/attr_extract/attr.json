@@ -1,0 +1,48 @@
+[
+    {
+        "type": "Number",
+        "goal": "high",
+        "values": [
+            "mpg",
+            "miles per gallon",
+            "miles/gallon",
+            "m/g"
+        ]
+    },
+    {
+        "type": "Boolean",
+        "goal": "True",
+        "values": [
+         "electric",
+         "ev",
+         "euv"            
+        ]
+    },
+    {
+        "type": "Keyword",
+        "goal": null,
+        "values":[
+            "color",
+            "paint",
+            "coating"
+        ]
+    },
+    {
+        "type": "Keyword",
+        "goal": null,
+        "values":[
+            "Brand",
+            "Company",
+            "Manufacturer"
+        ]
+    },
+    {
+        "values": [
+            "miles",
+            "mileage",
+            "distance"
+        ],
+        "type": "Number",
+        "goal": "high"
+    }
+]
